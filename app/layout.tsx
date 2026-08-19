@@ -5,10 +5,10 @@ import './globals.css'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://sharplegal.in'),
-  title: { default: 'Sharp Legal & Co. | Clarity when it matters', template: '%s | Sharp Legal & Co.' },
-  description: 'Sharp Legal & Co. is an independent law firm for organisations navigating complexity, change and opportunity.',
+  title: { default: 'Sharp Legal & Co. | Advocates · Solicitors · Consultants', template: '%s | Sharp Legal & Co.' },
+  description: 'Sharp Legal & Co. is a specialized techno-legal law firm advising on electricity and energy law, regulatory litigation, commercial disputes, and corporate advisory across India.',
   alternates: { canonical: '/' },
-  openGraph: { title: 'Sharp Legal & Co. | Clarity when it matters', description: 'Independent counsel for consequential decisions.', type: 'website', siteName: 'Sharp Legal & Co.' },
+  openGraph: { title: 'Sharp Legal & Co. | Clarity when it matters', description: 'Sharp Legal & Co. is a strong techno-legal team of professionals specializing in energy law, regulatory litigation, commercial disputes, and corporate advisory.', type: 'website', siteName: 'Sharp Legal & Co.' },
   generator: 'v0.app',
 }
 

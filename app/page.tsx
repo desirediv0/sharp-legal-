@@ -81,10 +81,10 @@ export default function Home() {
               <h2>Good law is<br /><i>good judgment.</i></h2>
               <div className="intro-body">
                 <p>
-                  We advise businesses, institutions and individuals where the law intersects with a decision that matters.
+                  Sharp Legal &amp; Co. is a strong techno-legal team of professionals specializing in electricity and energy law, regulatory litigation, commercial disputes, and corporate advisory.
                 </p>
                 <p>
-                  Our lawyers combine technical depth with commercial perspective, making complexity easier to navigate and action easier to take.
+                  The firm combines deep sectoral expertise with a practical, solution-oriented approach to deliver effective representation before regulatory commissions, courts, and tribunals across India.
                 </p>
                 <div className="intro-highlights">
                   <div className="intro-highlight-item">
@@ -94,6 +94,10 @@ export default function Home() {
                   <div className="intro-highlight-item">
                     <CheckCircle2 size={16} className="highlight-icon" />
                     <span>Senior-led Case Strategy from Day One</span>
+                  </div>
+                  <div className="intro-highlight-item">
+                    <CheckCircle2 size={16} className="highlight-icon" />
+                    <span>Pan-India Advocacy across Tribunals &amp; Courts</span>
                   </div>
                 </div>
                 <Link className="text-link" href="/about">
@@ -129,7 +133,7 @@ export default function Home() {
             <div className="practice-heading">
               <div>
                 <h2>Depth where<br /><i>it counts.</i></h2>
-                <p className="practice-subtext">Focused expertise for the questions that keep leaders awake.</p>
+                <p className="practice-subtext">Focused expertise for the legal and regulatory questions that matter most.</p>
               </div>
               <Link className="button button-gold-outline" href="/practice-areas">
                 <span>View all 7 practices</span>
@@ -139,7 +143,7 @@ export default function Home() {
 
             {/* Featured Practice Cards with Images */}
             <div className="practice-cards-grid">
-              {featuredPractices.map((p, idx) => (
+              {practices.map((p) => (
                 <Link href={`/practice-areas/${p.slug}`} key={p.slug} className="practice-card">
                   <div className="practice-card-img-wrap">
                     <img src={p.image} alt={p.title} className="practice-card-img" />

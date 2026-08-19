@@ -42,7 +42,7 @@ export default function TermsPage() {
 
           <h2>5. Governing Law &amp; Jurisdiction</h2>
           <p>
-            These Terms of Use shall be governed by and construed in accordance with the laws of India. Any disputes arising in connection with the use of this website shall be subject to the exclusive jurisdiction of the competent courts in New Delhi, India.
+            These Terms of Use shall be governed by and construed in accordance with the laws of India. Any disputes arising in connection with the use of this website shall be subject to the exclusive jurisdiction of the competent courts in Gurugram / New Delhi, India.
           </p>
         </article>
 

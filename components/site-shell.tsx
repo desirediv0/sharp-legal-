@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
-import { ArrowUpRight, ChevronDown, ChevronRight, Menu, X, ArrowRight, Mail, Phone, Globe } from 'lucide-react'
+import { ArrowUpRight, ChevronDown, Menu, X, ArrowRight, Mail, Phone, Globe } from 'lucide-react'
 import { practices, phone, email, website, address } from '@/lib/practices'
 
 export function Breadcrumbs({ items }: { items: { label: string; href?: string }[] }) {
@@ -44,13 +44,13 @@ export function Header() {
       <nav className={open ? 'nav-links is-open' : 'nav-links'} aria-label="Main navigation">
         <Link href="/about" onClick={() => setOpen(false)}>The firm</Link>
 
-        <div 
+        <div
           className="nav-dropdown"
           onMouseEnter={() => setPracticeOpen(true)}
           onMouseLeave={() => setPracticeOpen(false)}
         >
-          <button 
-            type="button" 
+          <button
+            type="button"
             className="dropdown-trigger"
             onClick={() => setPracticeOpen(!practiceOpen)}
             aria-expanded={practiceOpen}
@@ -65,9 +65,9 @@ export function Header() {
             </div>
             <div className="dropdown-items">
               {practices.map((p) => (
-                <Link 
-                  key={p.slug} 
-                  href={`/practice-areas/${p.slug}`} 
+                <Link
+                  key={p.slug}
+                  href={`/practice-areas/${p.slug}`}
                   className="dropdown-item"
                   onClick={() => { setOpen(false); setPracticeOpen(false); }}
                 >
@@ -81,8 +81,8 @@ export function Header() {
               ))}
             </div>
             <div className="dropdown-footer">
-              <Link 
-                href="/practice-areas" 
+              <Link
+                href="/practice-areas"
                 className="dropdown-all-link"
                 onClick={() => { setOpen(false); setPracticeOpen(false); }}
               >
@@ -101,10 +101,10 @@ export function Header() {
         </Link>
       </nav>
 
-      <button 
-        className="menu-button" 
-        onClick={() => setOpen(!open)} 
-        aria-label={open ? 'Close menu' : 'Open menu'} 
+      <button
+        className="menu-button"
+        onClick={() => setOpen(!open)}
+        aria-label={open ? 'Close menu' : 'Open menu'}
         aria-expanded={open}
       >
         {open ? <X size={24} /> : <Menu size={24} />}
@@ -235,8 +235,8 @@ export function PageHero({
 }) {
   const style = bgImage
     ? {
-        backgroundImage: `linear-gradient(115deg, rgba(248,247,243,0.96) 0%, rgba(248,247,243,0.85) 55%, rgba(248,247,243,0.65) 100%), url('${bgImage}')`
-      }
+      backgroundImage: `linear-gradient(115deg, rgba(248,247,243,0.96) 0%, rgba(248,247,243,0.85) 55%, rgba(248,247,243,0.65) 100%), url('${bgImage}')`
+    }
     : undefined
 
   return (
