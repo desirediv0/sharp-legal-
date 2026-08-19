@@ -2414,6 +2414,75 @@ a {
   color: var(--gold);
 }
 
+.footer-address-ribbon {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 6vw 40px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-ribbon-line {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 18px;
+}
+
+.ribbon-line {
+  flex-grow: 1;
+  height: 1px;
+  background: rgba(190, 161, 100, 0.35);
+}
+
+.ribbon-diamond {
+  color: var(--gold);
+  font-size: 8px;
+}
+
+.footer-ribbon-address {
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  margin: 0 0 10px;
+}
+
+.footer-ribbon-contacts {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  color: var(--muted-light);
+  font-size: 13px;
+}
+
+.ribbon-contact-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #ffffff;
+  transition: color 0.2s ease;
+}
+
+.ribbon-contact-item:hover {
+  color: var(--gold);
+}
+
+.ribbon-icon {
+  color: var(--gold);
+}
+
+.ribbon-sep {
+  color: rgba(190, 161, 100, 0.4);
+}
+
 .footer-bottom {
   max-width: 1280px;
   margin: 0 auto;

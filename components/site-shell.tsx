@@ -3,7 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { useState } from 'react'
-import { ArrowUpRight, ChevronDown, ChevronRight, Menu, X, ArrowRight } from 'lucide-react'
+import { ArrowUpRight, ChevronDown, ChevronRight, Menu, X, ArrowRight, Mail, Phone, Globe } from 'lucide-react'
 import { practices, phone, email, website, address } from '@/lib/practices'
 
 export function Breadcrumbs({ items }: { items: { label: string; href?: string }[] }) {
@@ -131,7 +131,7 @@ export function Footer() {
             Sharp Legal &amp; Co. is a strong techno-legal team of professionals specializing in electricity and energy law, regulatory litigation, commercial disputes, and corporate advisory across India.
           </p>
           <div className="footer-trust-tag">
-            <span>New Delhi · Mumbai · Pan-India Practice</span>
+            <span>Gurugram (Delhi NCR) · Pan-India Practice</span>
           </div>
         </div>
 
@@ -177,6 +177,32 @@ export function Footer() {
               <span className="value">{address}</span>
             </div>
           </div>
+        </div>
+      </div>
+
+      {/* Official Address Ribbon */}
+      <div className="footer-address-ribbon">
+        <div className="footer-ribbon-line">
+          <span className="ribbon-line" />
+          <span className="ribbon-diamond">◆</span>
+          <span className="ribbon-line" />
+        </div>
+        <p className="footer-ribbon-address">{address}</p>
+        <div className="footer-ribbon-contacts">
+          <a href={`mailto:${email}`} className="ribbon-contact-item">
+            <Mail size={13} className="ribbon-icon" />
+            <span>{email}</span>
+          </a>
+          <span className="ribbon-sep">|</span>
+          <a href={`tel:${phone.replace(/\s+/g, '')}`} className="ribbon-contact-item">
+            <Phone size={13} className="ribbon-icon" />
+            <span>{phone}</span>
+          </a>
+          <span className="ribbon-sep">|</span>
+          <a href="https://www.sharplegal.in" target="_blank" rel="noopener noreferrer" className="ribbon-contact-item">
+            <Globe size={13} className="ribbon-icon" />
+            <span>{website}</span>
+          </a>
         </div>
       </div>
 

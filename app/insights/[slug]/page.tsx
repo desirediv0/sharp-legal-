@@ -2,7 +2,7 @@ import { notFound } from 'next/navigation'
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { SiteShell, PageHero, CTA } from '@/components/site-shell'
-import { firmInsights, type FirmInsight } from '@/lib/practices'
+import { firmInsights, address, type FirmInsight } from '@/lib/practices'
 
 export function generateStaticParams() {
   return firmInsights.map((i) => ({ slug: i.slug }))
@@ -94,7 +94,7 @@ export default async function InsightDetailPage({ params }: { params: Promise<{ 
 
           <div className="article-footer-meta">
             <span>Published by Sharp Legal &amp; Co. Editorial Group</span>
-            <span>Safdarjung Enclave, New Delhi · India</span>
+            <span>{address}</span>
           </div>
         </article>
 

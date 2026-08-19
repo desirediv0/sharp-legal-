@@ -52,7 +52,7 @@ export default function Home() {
                   <Scale size={16} color="var(--gold)" />
                   <div>
                     <strong>High Court &amp; Appellate Advocacy</strong>
-                    <span>New Delhi · Mumbai · Pan-India</span>
+                    <span>Gurugram (Delhi NCR) · Pan-India</span>
                   </div>
                 </div>
                 <div className="hero-aside-card">
@@ -237,7 +237,7 @@ export default function Home() {
             <div className="metrics">
               <div><strong>12+</strong><span>years of practice</span></div>
               <div><strong>7</strong><span>core disciplines</span></div>
-              <div><strong>2</strong><span>cities, one standard</span></div>
+              <div><strong>Pan-India</strong><span>Tribunals &amp; Courts</span></div>
             </div>
           </div>
         </section>

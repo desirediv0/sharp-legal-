@@ -1008,9 +1008,9 @@ export const firmInsights: FirmInsight[] = [
   }
 ]
 
-export const logoUrl = 'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/GG1.jpg-b5BM4ioAOOPewEC4QiXflKsg3ZsOzY.jpeg'
+export const logoUrl = '/logo.png'
 export const phone = '+91 72063 16663'
 export const email = 'info@sharplegal.in'
 export const website = 'www.sharplegal.in'
-export const address = 'Safdarjung Enclave, New Delhi · India'
+export const address = '658-659, 6th Floor, Satya The Hive, Sector-102, Gurugram - 122006, Haryana'
 export const siteUrl = 'https://sharplegal.in'
