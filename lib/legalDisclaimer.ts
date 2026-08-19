@@ -17,6 +17,5 @@ export const legalDisclaimerData = {
     text: 'Information available on this website is general in nature and should not be treated as formal legal advice. Past performance or reported precedents do not guarantee similar outcomes.'
   },
   confirmationText: 'By clicking “Proceed to Website”, you confirm that you have read, understood, and accepted the above disclaimer in its entirety.',
-  buttonText: 'Proceed to Website',
-  sessionKey: 'sharp_legal_disclaimer_accepted'
+  buttonText: 'Proceed to Website'
 }

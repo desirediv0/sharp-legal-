@@ -1,7 +1,19 @@
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import { ArrowUpRight, ShieldCheck, Scale, Compass, CheckCircle2 } from 'lucide-react'
 import { SiteShell, CTA } from '@/components/site-shell'
 import { practices, firmInsights } from '@/lib/practices'
+
+export const metadata: Metadata = {
+  title: 'Sharp Legal & Co. | Advocates · Solicitors · Consultants',
+  description: 'Sharp Legal & Co. is a full-service law firm for organisations navigating complexity, change and opportunity across India. Energy law, regulatory litigation, corporate advisory.',
+  alternates: { canonical: '/' },
+  openGraph: {
+    title: 'Sharp Legal & Co. | Clarity when it matters',
+    description: 'Full-service law firm specializing in electricity and energy law, regulatory litigation, commercial disputes, and corporate advisory across India.',
+    type: 'website',
+  },
+}
 
 export default function Home() {
   const featuredPractices = practices.slice(0, 4)

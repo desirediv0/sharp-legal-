@@ -5,6 +5,8 @@ import Image from 'next/image'
 import { ArrowRight, Scale, ShieldCheck } from 'lucide-react'
 import { legalDisclaimerData } from '@/lib/legalDisclaimer'
 
+const DISCLAIMER_KEY = 'sharp_legal_disclaimer_accepted'
+
 export function LegalDisclaimer() {
   const [mounted, setMounted] = useState(false)
   const [showDisclaimer, setShowDisclaimer] = useState(false)
@@ -13,7 +15,7 @@ export function LegalDisclaimer() {
   useEffect(() => {
     setMounted(true)
     try {
-      const accepted = sessionStorage.getItem('sharp-legal-disclaimer-accepted')
+      const accepted = sessionStorage.getItem(DISCLAIMER_KEY)
       if (!accepted) {
         setShowDisclaimer(true)
       }
@@ -48,7 +50,7 @@ export function LegalDisclaimer() {
 
   const handleProceed = () => {
     try {
-      sessionStorage.setItem('sharp-legal-disclaimer-accepted', 'true')
+      sessionStorage.setItem(DISCLAIMER_KEY, 'true')
     } catch (err) {
       console.warn('Unable to write to sessionStorage', err)
     }
