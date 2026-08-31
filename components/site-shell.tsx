@@ -93,7 +93,6 @@ export function Header() {
           </div>
         </div>
 
-        <Link href="/expertise" onClick={() => setOpen(false)}>Expertise</Link>
         <Link href="/insights" onClick={() => setOpen(false)}>Insights</Link>
         <Link className="nav-contact" href="/contact" onClick={() => setOpen(false)}>
           <span>Initiate Deliberation</span>
@@ -139,7 +138,6 @@ export function Footer() {
           <p className="footer-col-title">The Firm</p>
           <ul className="footer-links">
             <li><Link href="/about">Chambers Profile</Link></li>
-            <li><Link href="/expertise">Sectoral Expertise</Link></li>
             <li><Link href="/practice-areas">Practice Disciplines</Link></li>
             <li><Link href="/insights">Jurisprudential Insights</Link></li>
             <li><Link href="/contact">Initiate Deliberation</Link></li>
