@@ -1,16 +1,28 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
-import { ArrowUpRight, ShieldCheck, Scale, Compass, CheckCircle2 } from 'lucide-react'
+import {
+  ArrowUpRight,
+  ShieldCheck,
+  Scale,
+  Compass,
+  CheckCircle2,
+  Zap,
+  Building2,
+  Landmark,
+  Briefcase
+} from 'lucide-react'
 import { SiteShell, CTA } from '@/components/site-shell'
 import { practices, firmInsights } from '@/lib/practices'
 
 export const metadata: Metadata = {
-  title: 'Sharp Legal & Co. | Advocates · Solicitors · Consultants',
-  description: 'Sharp Legal & Co. is a full-service law firm for organisations navigating complexity, change and opportunity across India. Energy law, regulatory litigation, corporate advisory.',
+  title: 'Sharp Legal & Co. | Advocates · Solicitors · Techno-Legal Consultants',
+  description:
+    'Sharp Legal & Co. is an elite techno-legal law firm advising corporations, energy developers, infrastructure conglomerates, and institutions across India. Specialized in electricity law, regulatory litigation, commercial arbitration, and corporate advisory.',
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Sharp Legal & Co. | Clarity when it matters',
-    description: 'Full-service law firm specializing in electricity and energy law, regulatory litigation, commercial disputes, and corporate advisory across India.',
+    title: 'Sharp Legal & Co. | Precision in Law. Decisive in Outcome.',
+    description:
+      'Chambers of techno-legal advocates and consultants specializing in energy regulation, high-stakes commercial disputes, appellate litigation, and corporate advisory across India.',
     type: 'website',
   },
 }
@@ -25,29 +37,36 @@ export default function Home() {
         <section className="hero" id="top">
           <div className="hero-grid">
             <div className="hero-content">
-              <p className="eyebrow">Advocates · Solicitors · Consultants</p>
-              <h1>Clarity when<br /><i>it matters.</i></h1>
+              <p className="eyebrow">ADVOCATES · SOLICITORS · TECHNO-LEGAL CONSULTANTS</p>
+              <h1>
+                Clarity in complexity.<br />
+                <i>Decisive in outcome.</i>
+              </h1>
               <p className="hero-copy">
-                Sharp Legal &amp; Co. is a full-service law firm for organisations navigating complexity, change and opportunity across India.
+                Sharp Legal &amp; Co. is a specialized techno-legal law firm. We advise corporations, infrastructure developers, energy utilities, and financial institutions navigating high-stakes regulatory, commercial, and judicial challenges across India.
               </p>
               <div className="hero-actions">
                 <Link className="button button-gold" href="/contact">
-                  <span>Meet your next counsel</span>
+                  <span>Schedule a Consultation</span>
                   <ArrowUpRight size={16} />
                 </Link>
                 <Link className="button button-outline" href="/practice-areas">
-                  <span>Explore Practices</span>
+                  <span>Explore Practice Areas</span>
                 </Link>
               </div>
 
               <div className="hero-badges">
                 <div className="hero-badge-item">
                   <span className="badge-dot" />
-                  <span>Energy &amp; Regulatory Specialists</span>
+                  <span>Power &amp; Renewable Energy Specialists</span>
                 </div>
                 <div className="hero-badge-item">
                   <span className="badge-dot" />
-                  <span>Supreme Court &amp; Tribunal Advocates</span>
+                  <span>Supreme Court &amp; Appellate Advocates</span>
+                </div>
+                <div className="hero-badge-item">
+                  <span className="badge-dot" />
+                  <span>Commercial Arbitration &amp; Advisory</span>
                 </div>
               </div>
             </div>
@@ -56,21 +75,21 @@ export default function Home() {
               <div className="hero-image-frame">
                 <img
                   src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&w=1600&q=85"
-                  alt="Supreme Court & High Court Legal Advocacy - Sharp Legal & Co."
+                  alt="Supreme Court and High Court Legal Advocacy - Sharp Legal & Co."
                   className="hero-main-img"
                 />
                 <div className="hero-image-overlay" />
                 <div className="hero-image-badge">
                   <Scale size={16} color="var(--gold)" />
                   <div>
-                    <strong>High Court &amp; Appellate Advocacy</strong>
-                    <span>Gurugram (Delhi NCR) · Pan-India</span>
+                    <strong>Chambers of Advocacy &amp; Advisory</strong>
+                    <span>Gurugram (Delhi NCR) · Pan-India Jurisdictions</span>
                   </div>
                 </div>
                 <div className="hero-aside-card">
                   <span>EST.</span>
                   <strong>2012</strong>
-                  <span>FOUNDED ON EXCELLENCE</span>
+                  <span>RIGOR · INTEGRITY · MASTERY</span>
                 </div>
               </div>
             </div>
@@ -79,41 +98,49 @@ export default function Home() {
 
         {/* TRUST STRIP */}
         <div className="trust-strip">
-          <span>Independent counsel</span>
-          <span>Sector fluency</span>
-          <span>Decisive when needed</span>
-          <span>Built for the long term</span>
+          <span>Techno-Legal Precision</span>
+          <span>Senior-Led Strategy</span>
+          <span>Apex Forum Mastery</span>
+          <span>Uncompromising Ethics</span>
+          <span>Commercially Anchored</span>
         </div>
 
-        {/* SECTION 01: THE FIRM */}
+        {/* SECTION 01: INSTITUTIONAL LINEAGE */}
         <section className="section intro-section">
-          <div className="section-label">01 <span>The firm</span></div>
+          <div className="section-label">01 <span>Institutional Lineage</span></div>
           <div className="intro-grid">
             <div className="intro-text-col">
-              <h2>Good law is<br /><i>good judgment.</i></h2>
+              <h2>
+                Where legal acumen meets<br />
+                <i>sectoral reality.</i>
+              </h2>
               <div className="intro-body">
                 <p>
-                  Sharp Legal &amp; Co. is a strong techno-legal team of professionals specializing in electricity and energy law, regulatory litigation, commercial disputes, and corporate advisory.
+                  In capital-intensive and heavily regulated sectors, legal counsel cannot afford to operate in an abstract vacuum. Effective representation requires an intricate understanding of grid physics, tariff formulas, project financing covenants, and statutory frameworks working in unison.
                 </p>
                 <p>
-                  The firm combines deep sectoral expertise with a practical, solution-oriented approach to deliver effective representation before regulatory commissions, courts, and tribunals across India.
+                  Founded in 2012, Sharp Legal &amp; Co. has established a formidable reputation as India&apos;s leading techno-legal chambers. We represent clients across the full regulatory and judicial hierarchy—from State and Central Electricity Regulatory Commissions (SERCs/CERC) and the Appellate Tribunal for Electricity (APTEL) to the National Company Law Tribunal (NCLT), High Courts across India, and the Supreme Court of India.
                 </p>
                 <div className="intro-highlights">
                   <div className="intro-highlight-item">
                     <CheckCircle2 size={16} className="highlight-icon" />
-                    <span>Specialized Techno-Legal Capability</span>
+                    <span>Techno-Legal Mastery across Energy, Transmission, and Renewable Tariffs</span>
                   </div>
                   <div className="intro-highlight-item">
                     <CheckCircle2 size={16} className="highlight-icon" />
-                    <span>Senior-led Case Strategy from Day One</span>
+                    <span>Senior-Advocate Led Strategy from Initial Petition to Apex Appellate Review</span>
                   </div>
                   <div className="intro-highlight-item">
                     <CheckCircle2 size={16} className="highlight-icon" />
-                    <span>Pan-India Advocacy across Tribunals &amp; Courts</span>
+                    <span>Pan-India Presence before Constitutional Courts &amp; Specialized Regulatory Benches</span>
+                  </div>
+                  <div className="intro-highlight-item">
+                    <CheckCircle2 size={16} className="highlight-icon" />
+                    <span>Bespoke Corporate Advisory &amp; Proactive Dispute Avoidance Architecture</span>
                   </div>
                 </div>
                 <Link className="text-link" href="/about">
-                  <span>Learn about the firm</span>
+                  <span>Explore our chambers profile</span>
                   <ArrowUpRight size={16} />
                 </Link>
               </div>
@@ -128,34 +155,39 @@ export default function Home() {
                 />
                 <div className="editorial-badge">
                   <ShieldCheck size={18} color="var(--gold)" />
-                  <span>12+ Years of Trusted Legal Practice</span>
+                  <span>12+ Years of Trusted Chambers Practice</span>
                 </div>
                 <div className="editorial-caption">
-                  <span>Techno-Legal Mastery · Senior Advocate Chambers</span>
+                  <span>Techno-Legal Excellence · Senior Advocates &amp; Solicitors · Delhi NCR</span>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* SECTION 02: AREAS OF PRACTICE */}
+        {/* SECTION 02: CORE PRACTICE DISCIPLINES */}
         <section className="practice-section">
           <div className="section practice-inner">
-            <div className="section-label light">02 <span>Areas of practice</span></div>
+            <div className="section-label light">02 <span>Areas of Specialization</span></div>
             <div className="practice-heading">
               <div>
-                <h2>Depth where<br /><i>it counts.</i></h2>
-                <p className="practice-subtext">Focused expertise for the legal and regulatory questions that matter most.</p>
+                <h2>
+                  Focused depth for<br />
+                  <i>consequential mandates.</i>
+                </h2>
+                <p className="practice-subtext">
+                  Strategic representation across 7 integrated disciplines where regulatory volatility, financial scale, and statutory complexity converge.
+                </p>
               </div>
               <Link className="button button-gold-outline" href="/practice-areas">
-                <span>View all 7 practices</span>
+                <span>Explore all 7 practices</span>
                 <ArrowUpRight size={16} />
               </Link>
             </div>
 
-            {/* Featured Practice Cards with Images */}
+            {/* Featured Practice Cards with Imagery */}
             <div className="practice-cards-grid">
-              {practices.map((p) => (
+              {featuredPractices.map((p) => (
                 <Link href={`/practice-areas/${p.slug}`} key={p.slug} className="practice-card">
                   <div className="practice-card-img-wrap">
                     <img src={p.image} alt={p.title} className="practice-card-img" />
@@ -174,7 +206,7 @@ export default function Home() {
               ))}
             </div>
 
-            {/* Full Practice List */}
+            {/* Complete Practice Roster List */}
             <div className="practice-list">
               {practices.map((p, i) => (
                 <Link className="practice-item" href={`/practice-areas/${p.slug}`} key={p.slug}>
@@ -190,81 +222,204 @@ export default function Home() {
           </div>
         </section>
 
-        {/* SECTION 03: OUR APPROACH */}
+        {/* SECTION 03: SECTORAL COVERAGE */}
+        <section className="section sectors-section">
+          <div className="section-label">03 <span>Sectoral Footprint</span></div>
+          <div style={{ marginTop: '40px' }}>
+            <p className="eyebrow">INDUSTRY IMMERSION</p>
+            <h2 style={{ fontSize: 'clamp(42px, 5.5vw, 76px)', margin: '0 0 16px' }}>
+              Industry fluency across<br />
+              <i>critical infrastructure.</i>
+            </h2>
+            <p style={{ color: 'var(--muted)', maxWidth: '620px', fontSize: '16px', lineHeight: '1.65' }}>
+              Our practice is anchored in sectors vital to national economic expansion. We translate commercial objectives into durable statutory protection.
+            </p>
+          </div>
+
+          <div className="sector-cards-grid">
+            <div className="sector-card">
+              <div className="sector-card-icon">
+                <Zap size={20} />
+              </div>
+              <h3>Power &amp; Renewable Energy</h3>
+              <p>
+                Advising conventional generators, solar and wind IPPs, transmission utilities, distribution licensees, and green hydrogen developers on tariff structures, Change in Law compensations, and grid connectivity.
+              </p>
+              <div className="sector-card-tags">
+                <span>PPAs &amp; Tariffs</span>
+                <span>CERC &amp; APTEL</span>
+                <span>Green Open Access</span>
+                <span>Grid Code</span>
+              </div>
+            </div>
+
+            <div className="sector-card">
+              <div className="sector-card-icon">
+                <Building2 size={20} />
+              </div>
+              <h3>Heavy Infrastructure &amp; EPC</h3>
+              <p>
+                Counseling concessionaires, EPC contractors, and project developers in highways, metros, ports, and urban transit systems on contract administration, delay prolongation claims, and FIDIC disputes.
+              </p>
+              <div className="sector-card-tags">
+                <span>EPC Contracts</span>
+                <span>Delay Claims</span>
+                <span>Arbitration</span>
+                <span>Concessions</span>
+              </div>
+            </div>
+
+            <div className="sector-card">
+              <div className="sector-card-icon">
+                <Landmark size={20} />
+              </div>
+              <h3>Banking &amp; Financial Institutions</h3>
+              <p>
+                Representing commercial lenders, NBFCs, asset reconstruction companies, and corporate borrowers across debt restructuring, resolution processes under IBC, and SARFAESI proceedings.
+              </p>
+              <div className="sector-card-tags">
+                <span>IBC / NCLT</span>
+                <span>Debt Restructure</span>
+                <span>SARFAESI</span>
+                <span>Enforcement</span>
+              </div>
+            </div>
+
+            <div className="sector-card">
+              <div className="sector-card-icon">
+                <Briefcase size={20} />
+              </div>
+              <h3>Conglomerates &amp; Enterprises</h3>
+              <p>
+                Providing board-level strategic counsel to diversified corporate groups on joint ventures, cross-border commercial transactions, shareholder governance, and proactive dispute mitigation.
+              </p>
+              <div className="sector-card-tags">
+                <span>Joint Ventures</span>
+                <span>Commercial Suits</span>
+                <span>Regulatory Defense</span>
+                <span>RERA</span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* SECTION 04: CHAMBERS METHODOLOGY */}
         <section className="section approach-section">
-          <div className="section-label">03 <span>Our approach</span></div>
+          <div className="section-label">04 <span>Chambers Methodology</span></div>
           <div className="approach-grid">
             <div className="approach-media-col">
               <div className="editorial-frame">
                 <img
                   src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1400&q=85"
-                  alt="Sharp Legal Strategy and Deliberation Counsel"
+                  alt="Sharp Legal Strategic Deliberation and Chambers Counsel"
                   className="editorial-img"
                 />
                 <div className="editorial-badge">
                   <Compass size={18} color="var(--gold)" />
-                  <span>Rigorous Problem Solving</span>
+                  <span>Exacting Problem-Solving</span>
                 </div>
                 <div className="editorial-caption">
-                  <span>Executive Boardroom &amp; Strategic Litigation Advisory</span>
+                  <span>Executive Boardroom Advisory &amp; Strategic Trial Advocacy</span>
                 </div>
               </div>
             </div>
 
             <div className="approach-copy">
-              <h2>Quiet confidence.<br /><i>Serious momentum.</i></h2>
+              <h2>
+                Calm deliberation.<br />
+                <i>Unyielding advocacy.</i>
+              </h2>
               <p>
-                Our role is not simply to know the law. It is to understand the landscape around it—and help you move through it with confidence.
+                Our counsel is neither reactive nor formulaic. We approach every matter through an exacting four-phase strategic blueprint designed to insulate clients from procedural vulnerabilities while maximizing tactical leverage.
               </p>
               <div className="principles">
                 <div>
                   <div>
-                    <b>Listen closely</b>
-                    <p className="principle-sub">We start with the real commercial and statutory question.</p>
+                    <b>Techno-Legal Deconstruction</b>
+                    <p className="principle-sub">
+                      We dissect generation metrics, grid parameters, and cash flow models alongside statutory codes to unearth pivotal factual leverage.
+                    </p>
                   </div>
                   <span>01</span>
                 </div>
                 <div>
                   <div>
-                    <b>Think around corners</b>
-                    <p className="principle-sub">We anticipate regulatory risk and procedural traps early.</p>
+                    <b>Regulatory &amp; Jurisprudential Mapping</b>
+                    <p className="principle-sub">
+                      We benchmark dispute facts against evolving regulatory orders, tribunal precedents, and judicial doctrines to forecast counter-moves.
+                    </p>
                   </div>
                   <span>02</span>
                 </div>
                 <div>
                   <div>
-                    <b>Move with purpose</b>
-                    <p className="principle-sub">Legal counsel is effective when it delivers clear business outcomes.</p>
+                    <b>Pre-Litigation Tactical Positioning</b>
+                    <p className="principle-sub">
+                      We structure statutory notices, letters of dispute, and negotiation posture to preserve critical rights and establish decisive courtroom leverage.
+                    </p>
                   </div>
                   <span>03</span>
+                </div>
+                <div>
+                  <div>
+                    <b>Apex Courtroom &amp; Arbitral Representation</b>
+                    <p className="principle-sub">
+                      We present oral arguments and written pleadings with exceptional clarity and authority, commanding respect across judicial benches.
+                    </p>
+                  </div>
+                  <span>04</span>
                 </div>
               </div>
             </div>
           </div>
         </section>
 
-        {/* SECTION 04: CREDIBILITY */}
+        {/* SECTION 05: EMPIRICAL BENCHMARKS */}
         <section className="credibility">
           <div className="section credibility-inner">
             <div>
-              <p className="eyebrow">A considered point of view</p>
-              <h2>Independent by design.<br /><i>Invested in your outcome.</i></h2>
+              <p className="eyebrow">EMPIRICAL DISTINCTION &amp; REACH</p>
+              <h2>
+                Institutional trust,<br />
+                <i>measured in results.</i>
+              </h2>
             </div>
             <div className="metrics">
-              <div><strong>12+</strong><span>years of practice</span></div>
-              <div><strong>7</strong><span>core disciplines</span></div>
-              <div><strong>Pan-India</strong><span>Tribunals &amp; Courts</span></div>
+              <div>
+                <strong>12+</strong>
+                <span>years of continuous practice</span>
+              </div>
+              <div>
+                <strong>7</strong>
+                <span>core practice verticals</span>
+              </div>
+              <div>
+                <strong>₹1,500+ Cr</strong>
+                <span>commercial &amp; regulatory stakes</span>
+              </div>
+              <div>
+                <strong>Pan-India</strong>
+                <span>Apex Courts &amp; Tribunals</span>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* SECTION 05: LATEST THINKING */}
+        {/* SECTION 06: JURISPRUDENTIAL INSIGHTS */}
         <section className="section insights-section">
-          <div className="section-label">04 <span>Latest thinking</span></div>
+          <div className="section-label">06 <span>Jurisprudential Insights</span></div>
           <div className="insights-heading">
-            <h2>From the<br /><i>firm.</i></h2>
+            <div>
+              <h2>
+                Dispatches from the<br />
+                <i>regulatory vanguard.</i>
+              </h2>
+              <p style={{ color: 'var(--muted)', marginTop: '8px', fontSize: '15px' }}>
+                Authoritative legal analysis and strategic commentary on landmark rulings, policy updates, and market transformations.
+              </p>
+            </div>
             <Link className="text-link" href="/insights">
-              <span>View all insights</span>
+              <span>View all publications &amp; briefs</span>
               <ArrowUpRight size={16} />
             </Link>
           </div>
@@ -289,9 +444,14 @@ export default function Home() {
           </div>
         </section>
 
-        <CTA />
+        {/* EXECUTIVE CTA */}
+        <CTA
+          eyebrow="CONFIDENTIAL LEGAL ENGAGEMENT"
+          heading="When strategic decisions carry significant consequence, counsel makes the difference."
+          buttonText="Initiate a Consultation"
+          href="/contact"
+        />
       </main>
     </SiteShell>
   )
 }
-

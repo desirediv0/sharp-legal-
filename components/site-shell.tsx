@@ -42,7 +42,7 @@ export function Header() {
       </Link>
 
       <nav className={open ? 'nav-links is-open' : 'nav-links'} aria-label="Main navigation">
-        <Link href="/about" onClick={() => setOpen(false)}>The firm</Link>
+        <Link href="/about" onClick={() => setOpen(false)}>The Firm</Link>
 
         <div
           className="nav-dropdown"
@@ -55,13 +55,13 @@ export function Header() {
             onClick={() => setPracticeOpen(!practiceOpen)}
             aria-expanded={practiceOpen}
           >
-            <span>Practices</span>
+            <span>Practices &amp; Sectors</span>
             <ChevronDown size={14} className={practiceOpen ? 'rotate-180 transition-transform' : 'transition-transform'} />
           </button>
 
           <div className={`dropdown-menu ${practiceOpen ? 'is-visible' : ''}`}>
             <div className="dropdown-header">
-              <span className="eyebrow-small">AREAS OF PRACTICE</span>
+              <span className="eyebrow-small">AREAS OF SPECIALIZATION · TECHNO-LEGAL COUNSEL</span>
             </div>
             <div className="dropdown-items">
               {practices.map((p) => (
@@ -86,7 +86,7 @@ export function Header() {
                 className="dropdown-all-link"
                 onClick={() => { setOpen(false); setPracticeOpen(false); }}
               >
-                <span>View all practice areas</span>
+                <span>Explore all 7 practice areas</span>
                 <ArrowRight size={13} />
               </Link>
             </div>
@@ -96,7 +96,7 @@ export function Header() {
         <Link href="/expertise" onClick={() => setOpen(false)}>Expertise</Link>
         <Link href="/insights" onClick={() => setOpen(false)}>Insights</Link>
         <Link className="nav-contact" href="/contact" onClick={() => setOpen(false)}>
-          <span>Start a conversation</span>
+          <span>Initiate Deliberation</span>
           <ArrowUpRight size={15} />
         </Link>
       </nav>
@@ -128,26 +128,26 @@ export function Footer() {
             />
           </Link>
           <p className="footer-bio">
-            Sharp Legal &amp; Co. is a strong techno-legal team of professionals specializing in electricity and energy law, regulatory litigation, commercial disputes, and corporate advisory across India.
+            Sharp Legal &amp; Co. is an elite techno-legal law firm advising corporations, energy developers, and institutional enterprises across India. Combining deep sector fluency with courtroom mastery, we provide senior-led counsel across energy regulation, complex commercial litigation, domestic and international arbitration, and strategic corporate transactions.
           </p>
           <div className="footer-trust-tag">
-            <span>Gurugram (Delhi NCR) · Pan-India Practice</span>
+            <span>Gurugram (Delhi NCR) · Pan-India Judicial &amp; Regulatory Practice</span>
           </div>
         </div>
 
         <div className="footer-column">
           <p className="footer-col-title">The Firm</p>
           <ul className="footer-links">
-            <li><Link href="/about">The Firm</Link></li>
-            <li><Link href="/expertise">Expertise &amp; Sectors</Link></li>
-            <li><Link href="/practice-areas">Practice Areas</Link></li>
-            <li><Link href="/insights">Insights &amp; Publications</Link></li>
-            <li><Link href="/contact">Start a Conversation</Link></li>
+            <li><Link href="/about">Chambers Profile</Link></li>
+            <li><Link href="/expertise">Sectoral Expertise</Link></li>
+            <li><Link href="/practice-areas">Practice Disciplines</Link></li>
+            <li><Link href="/insights">Jurisprudential Insights</Link></li>
+            <li><Link href="/contact">Initiate Deliberation</Link></li>
           </ul>
         </div>
 
         <div className="footer-column">
-          <p className="footer-col-title">Practices</p>
+          <p className="footer-col-title">Practice Disciplines</p>
           <ul className="footer-links">
             {practices.map((p) => (
               <li key={p.slug}>
@@ -158,22 +158,22 @@ export function Footer() {
         </div>
 
         <div className="footer-column contact-column">
-          <p className="footer-col-title">Direct Contact</p>
+          <p className="footer-col-title">Chambers Secretariat</p>
           <div className="footer-contact-info">
             <div className="footer-contact-item">
-              <span className="label">Phone</span>
+              <span className="label">Direct Line</span>
               <a href={`tel:${phone.replace(/\s+/g, '')}`} className="value">{phone}</a>
             </div>
             <div className="footer-contact-item">
-              <span className="label">Email</span>
+              <span className="label">Confidential Inquiries</span>
               <a href={`mailto:${email}`} className="value">{email}</a>
             </div>
             <div className="footer-contact-item">
-              <span className="label">Web</span>
+              <span className="label">Official Portal</span>
               <a href="https://www.sharplegal.in" target="_blank" rel="noopener noreferrer" className="value">{website}</a>
             </div>
             <div className="footer-contact-item">
-              <span className="label">Address</span>
+              <span className="label">Chambers Coordinates</span>
               <span className="value">{address}</span>
             </div>
           </div>
@@ -206,12 +206,17 @@ export function Footer() {
         </div>
       </div>
 
+      {/* Bar Council of India Advisory Note */}
+      <div className="footer-disclaimer-note">
+        <strong>Regulatory Notice:</strong> Under the rules of the Bar Council of India, Sharp Legal &amp; Co. does not solicit work or advertise legal services. The contents of this portal are intended solely for general institutional and informational purposes regarding our practice disciplines and techno-legal capabilities.
+      </div>
+
       <div className="footer-bottom">
-        <span className="copyright">© 2026 Sharp Legal &amp; Co. All rights reserved.</span>
+        <span className="copyright">© 2026 Sharp Legal &amp; Co. Advocates · Solicitors · Consultants. All rights reserved.</span>
         <div className="legal-links">
           <Link href="/privacy-policy">Privacy Policy</Link>
           <Link href="/terms">Terms of Use</Link>
-          <Link href="/disclaimer">Disclaimer</Link>
+          <Link href="/disclaimer">Bar Council Disclaimer</Link>
         </div>
       </div>
     </footer>
@@ -254,9 +259,9 @@ export function PageHero({
 }
 
 export function CTA({
-  eyebrow = "Get in touch",
-  heading = "Have a matter that requires careful legal thinking?",
-  buttonText = "Start a Conversation",
+  eyebrow = "CONFIDENTIAL DELIBERATION",
+  heading = "When strategic decisions carry significant legal consequence.",
+  buttonText = "Initiate a Consultation",
   href = "/contact"
 }: {
   eyebrow?: string

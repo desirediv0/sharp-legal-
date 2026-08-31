@@ -3135,6 +3135,234 @@ a {
   }
 }
 
+/* =========================================================================
+   FOOTER REGULATORY NOTICE & SECTOR GRID
+   ========================================================================= */
+.footer-disclaimer-note {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 6vw 24px;
+  text-align: center;
+  font-size: 11px;
+  line-height: 1.6;
+  color: #8c83aa;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding-top: 24px;
+}
+
+.footer-disclaimer-note strong {
+  color: var(--gold);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-right: 6px;
+}
+
+.sectors-section {
+  background: var(--ivory);
+  padding-top: 20px;
+}
+
+.sector-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  margin-top: 45px;
+}
+
+@media (max-width: 1024px) {
+  .sector-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .sector-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sector-card {
+  background: #ffffff;
+  border: 1px solid var(--line);
+  padding: 28px 24px;
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+}
+
+.sector-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: var(--gold);
+  opacity: 0.6;
+  transition: opacity 0.25s ease;
+}
+
+.sector-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--gold);
+  box-shadow: 0 12px 28px rgba(23, 16, 68, 0.07);
+}
+
+.sector-card:hover::before {
+  opacity: 1;
+}
+
+.sector-card-icon {
+  width: 40px;
+  height: 40px;
+  border: 1px solid rgba(190, 161, 100, 0.35);
+  background: rgba(190, 161, 100, 0.08);
+  display: grid;
+  place-items: center;
+  margin-bottom: 18px;
+  color: var(--navy);
+  border-radius: 2px;
+}
+
+.sector-card h3 {
+  font: 500 22px/1.2 'Cormorant Garamond', serif;
+  color: var(--navy);
+  margin: 0 0 10px;
+}
+
+.sector-card p {
+  color: var(--muted);
+  font-size: 13.5px;
+  line-height: 1.6;
+  margin: 0 0 16px;
+  flex-grow: 1;
+}
+
+.sector-card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-top: auto;
+  padding-top: 12px;
+  border-top: 1px solid rgba(217, 214, 207, 0.5);
+}
+
+.sector-card-tags span {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  background: var(--ivory);
+  color: var(--muted);
+  padding: 3px 8px;
+  border-radius: 2px;
+  font-weight: 600;
+}
+
+/* Chambers Reach Block */
+.chambers-reach-block {
+  margin-top: 40px;
+  background: #ffffff;
+  border: 1px solid var(--line);
+  padding: 42px 40px;
+  border-radius: 2px;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 40px;
+  align-items: center;
+  box-shadow: 0 10px 30px rgba(23, 16, 68, 0.04);
+}
+
+@media (max-width: 900px) {
+  .chambers-reach-block {
+    grid-template-columns: 1fr;
+    padding: 28px 24px;
+    gap: 28px;
+  }
+}
+
+.chambers-reach-info h3 {
+  font: 500 32px/1.15 'Cormorant Garamond', serif;
+  color: var(--navy);
+  margin: 0 0 14px;
+}
+
+.chambers-reach-info p {
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.65;
+  margin: 0 0 20px;
+}
+
+.chambers-reach-points {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.chambers-reach-point {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 13.5px;
+  color: var(--ink);
+  font-weight: 500;
+}
+
+.chambers-reach-point svg {
+  color: var(--gold);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.chambers-coords-box {
+  background: var(--ivory);
+  border: 1px solid var(--line);
+  padding: 28px;
+  border-radius: 2px;
+  border-left: 3px solid var(--gold);
+}
+
+.chambers-coords-box h4 {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--gold);
+  margin: 0 0 10px;
+  font-weight: 700;
+}
+
+.chambers-coords-address {
+  color: var(--navy);
+  font-size: 14px;
+  line-height: 1.6;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+.chambers-coords-contacts {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 13px;
+  border-top: 1px solid rgba(217, 214, 207, 0.6);
+  padding-top: 14px;
+}
+
+.chambers-coords-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--muted);
+  transition: color 0.2s ease;
+}
+
+.chambers-coords-link:hover {
+  color: var(--gold);
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -3143,3 +3371,4 @@ a {
     transition-duration: 0.01ms !important;
   }
 }
+

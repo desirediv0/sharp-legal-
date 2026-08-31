@@ -64,8 +64,9 @@ export default function PrivacyPage() {
         </article>
 
         <CTA
-          heading="Have questions regarding legal representation?"
-          buttonText="Contact Chambers"
+          eyebrow="CONFIDENTIAL DELIBERATION"
+          heading="When strategic decisions carry significant legal consequence."
+          buttonText="Initiate Deliberation"
           href="/contact"
         />
       </main>

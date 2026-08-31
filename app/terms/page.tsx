@@ -47,8 +47,9 @@ export default function TermsPage() {
         </article>
 
         <CTA
-          heading="Ready to discuss your legal requirements?"
-          buttonText="Start a Conversation"
+          eyebrow="CONFIDENTIAL DELIBERATION"
+          heading="When strategic decisions carry significant legal consequence."
+          buttonText="Initiate Deliberation"
           href="/contact"
         />
       </main>

@@ -221,11 +221,11 @@ export const practices: Practice[] = [
   },
   {
     slug: 'criminal-law',
-    aliases: [],
+    aliases: ['white-collar-defense', 'white-collar-crime'],
     number: '03',
-    title: 'Criminal Law',
-    short: 'Calm, strategic counsel and defense in white-collar and sensitive regulatory proceedings.',
-    description: 'We provide discreet representation, rigorous case assessment, and strategic defense in complex white-collar investigations and criminal matters.',
+    title: 'White-Collar Defense & Criminal Law',
+    short: 'Strategic counsel and defense in white-collar investigations, economic offences, and sensitive proceedings.',
+    description: 'We provide discreet representation, rigorous evidentiary assessment, and strategic defense in complex white-collar investigations, corporate fraud, and criminal proceedings.',
     longIntro: [
       'In an increasingly scrutinized business environment, corporate leaders, directors, and entities frequently encounter complex regulatory investigations and criminal proceedings that threaten personal liberty and corporate reputation.',
       'Sharp Legal & Co. provides discrete, sophisticated defense counsel in white-collar crimes, financial infractions, and criminal proceedings. We operate with absolute confidentiality, strategic foresight, and unwavering commitment to procedural rights.',

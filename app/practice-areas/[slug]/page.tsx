@@ -1,5 +1,6 @@
 import { notFound } from 'next/navigation'
 import Link from 'next/link'
+import type { Metadata } from 'next'
 import { ArrowUpRight } from 'lucide-react'
 import { SiteShell, PageHero, CTA } from '@/components/site-shell'
 import { FAQAccordion } from '@/components/faq-accordion'
@@ -20,12 +21,18 @@ export function generateStaticParams() {
   return slugs
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
   const p = findPractice(slug)
   return {
     title: p ? `${p.title} | Sharp Legal & Co.` : 'Practice Area | Sharp Legal & Co.',
-    description: p?.description || 'Sharp Legal & Co. practice area overview.'
+    description: p?.description || 'Sharp Legal & Co. specialized practice area overview and counsel.',
+    alternates: p ? { canonical: `/practice-areas/${p.slug}` } : undefined,
+    openGraph: p ? {
+      title: `${p.title} | Sharp Legal & Co. Advocates · Solicitors`,
+      description: p.description,
+      type: 'website'
+    } : undefined
   }
 }
 
@@ -46,24 +53,25 @@ export default async function PracticeDetailPage({ params }: { params: Promise<{
   return (
     <SiteShell>
       <main>
+        {/* PAGE HERO */}
         <PageHero
           breadcrumbs={[
             { label: 'Practices', href: '/practice-areas' },
             { label: practice.title }
           ]}
-          eyebrow="AREAS OF PRACTICE"
+          eyebrow="AREAS OF SPECIALIZATION · TECHNO-LEGAL COUNSEL"
           title={practice.title}
           intro={practice.description}
           bgImage={practice.image}
         />
 
-        {/* Introduction Section */}
+        {/* SECTION 01: INSTITUTIONAL PERSPECTIVE */}
         <section className="section">
-          <div className="section-label">01 <span>Practice Profile</span></div>
+          <div className="section-label">01 <span>Practice Architecture</span></div>
           <div className="editorial-split" style={{ marginTop: '50px' }}>
             <div className="editorial-text">
-              <p className="eyebrow">Strategic Perspective</p>
-              <h2>Advocacy anchored in <i>sector depth.</i></h2>
+              <p className="eyebrow">STRATEGIC PERSPECTIVE</p>
+              <h2>Advocacy anchored in <i>sectoral depth.</i></h2>
               <div className="editorial-paragraphs">
                 {practice.longIntro.map((para, idx) => (
                   <p key={idx}>{para}</p>
@@ -81,16 +89,16 @@ export default async function PracticeDetailPage({ params }: { params: Promise<{
           </div>
         </section>
 
-        {/* What We Advise On */}
+        {/* SECTION 02: SCOPE OF COUNSEL */}
         <section className="section" style={{ paddingTop: 0 }}>
-          <div className="section-label">02 <span>Capabilities</span></div>
+          <div className="section-label">02 <span>Scope of Counsel</span></div>
           <div style={{ marginTop: '40px' }}>
-            <p className="eyebrow">Scope of Counsel</p>
+            <p className="eyebrow">CHAMBERS CAPABILITIES</p>
             <h2 style={{ fontSize: 'clamp(38px, 5vw, 64px)', margin: '0 0 16px' }}>
               What We <i>Advise On.</i>
             </h2>
-            <p style={{ color: 'var(--muted)', maxWidth: '640px', fontSize: '17px' }}>
-              Our {practice.title.toLowerCase()} practice provides comprehensive counsel across key transactional, operational, and contentious matters.
+            <p style={{ color: 'var(--muted)', maxWidth: '640px', fontSize: '17px', lineHeight: '1.65' }}>
+              Our {practice.title.toLowerCase()} practice provides comprehensive counsel across transactional, regulatory, and contentious dispute proceedings.
             </p>
           </div>
 
@@ -107,12 +115,12 @@ export default async function PracticeDetailPage({ params }: { params: Promise<{
           </div>
         </section>
 
-        {/* Our Approach */}
+        {/* SECTION 03: PRACTICE METHODOLOGY */}
         <section className="dark-section">
           <div className="dark-inner">
             <div className="section-label light">03 <span style={{ color: 'var(--muted-light)' }}>Procedural Rigor</span></div>
             <div style={{ marginTop: '30px' }}>
-              <p className="eyebrow" style={{ color: 'var(--gold)' }}>Our Method</p>
+              <p className="eyebrow" style={{ color: 'var(--gold)' }}>DISCIPLINED PROTOCOL</p>
               <h2>A Disciplined <i>Process.</i></h2>
             </div>
 
@@ -128,13 +136,13 @@ export default async function PracticeDetailPage({ params }: { params: Promise<{
           </div>
         </section>
 
-        {/* Why This Matters */}
+        {/* SECTION 04: COMMERCIAL SIGNIFICANCE */}
         <section className="section" style={{ paddingBottom: 0 }}>
           <div className="why-matters-box">
             <div className="section-label" style={{ marginBottom: '20px' }}>
               04 <span>Commercial Context</span>
             </div>
-            <p className="eyebrow">Industry Reality</p>
+            <p className="eyebrow">INDUSTRY REALITY</p>
             <h2>Why This <i>Matters.</i></h2>
             <div className="why-matters-paragraphs">
               {practice.whyThisMatters.map((para, idx) => (
@@ -144,16 +152,16 @@ export default async function PracticeDetailPage({ params }: { params: Promise<{
           </div>
         </section>
 
-        {/* Related Practice Areas */}
+        {/* SECTION 05: INTERCONNECTED DISCIPLINES */}
         <section className="section">
           <div className="section-label">05 <span>Interconnected Disciplines</span></div>
           <div style={{ marginTop: '40px' }}>
-            <p className="eyebrow">Related Practices</p>
+            <p className="eyebrow">ADJACENT CAPABILITIES</p>
             <h2 style={{ fontSize: 'clamp(38px, 5vw, 64px)', margin: '0 0 16px' }}>
-              You may also be <i>interested in.</i>
+              Complementary <i>Practice Groups.</i>
             </h2>
-            <p style={{ color: 'var(--muted)', maxWidth: '640px', fontSize: '17px' }}>
-              Our clients frequently combine our {practice.title.toLowerCase()} counsel with adjacent legal practices.
+            <p style={{ color: 'var(--muted)', maxWidth: '640px', fontSize: '17px', lineHeight: '1.65' }}>
+              Our clients frequently combine our {practice.title.toLowerCase()} counsel with adjacent legal and regulatory practices.
             </p>
           </div>
 
@@ -170,21 +178,21 @@ export default async function PracticeDetailPage({ params }: { params: Promise<{
                   <h3>{rel.title}</h3>
                   <p>{rel.short}</p>
                 </div>
-                <span className="text-link">Explore Area <ArrowUpRight size={13} /></span>
+                <span className="text-link">Explore Practice <ArrowUpRight size={13} /></span>
               </Link>
             ))}
           </div>
         </section>
 
-        {/* Frequently Asked Questions */}
+        {/* SECTION 06: FREQUENTLY ASKED QUESTIONS */}
         <section className="section" style={{ paddingTop: 0 }}>
-          <div className="section-label">06 <span>FAQ</span></div>
+          <div className="section-label">06 <span>Jurisprudential Guidance</span></div>
           <div style={{ marginTop: '40px', textAlign: 'center', maxWidth: '720px', margin: '40px auto 0' }}>
-            <p className="eyebrow">Practical Guidance</p>
+            <p className="eyebrow">PRACTICAL GUIDANCE</p>
             <h2 style={{ fontSize: 'clamp(38px, 5vw, 60px)' }}>
               Frequently Asked <i>Questions.</i>
             </h2>
-            <p style={{ color: 'var(--muted)', fontSize: '16px' }}>
+            <p style={{ color: 'var(--muted)', fontSize: '16px', lineHeight: '1.6' }}>
               Key questions regarding regulatory procedures, tribunal representation, and our engagement terms.
             </p>
           </div>
@@ -194,9 +202,11 @@ export default async function PracticeDetailPage({ params }: { params: Promise<{
           </div>
         </section>
 
+        {/* EXECUTIVE CTA */}
         <CTA
-          heading={`Have a matter in ${practice.title}?`}
-          buttonText="Discuss Your Matter"
+          eyebrow="CONFIDENTIAL DELIBERATION"
+          heading={`Have a matter requiring counsel in ${practice.title}?`}
+          buttonText="Initiate Deliberation"
           href="/contact"
         />
       </main>

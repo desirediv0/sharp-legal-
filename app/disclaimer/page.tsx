@@ -43,8 +43,9 @@ export default function DisclaimerPage() {
         </article>
 
         <CTA
-          heading="Have a matter that requires careful legal thinking?"
-          buttonText="Start a Conversation"
+          eyebrow="CONFIDENTIAL DELIBERATION"
+          heading="When strategic decisions carry significant legal consequence."
+          buttonText="Initiate Deliberation"
           href="/contact"
         />
       </main>

@@ -21,22 +21,27 @@ export default function InsightsPage() {
   return (
     <SiteShell>
       <main>
+        {/* PAGE HERO */}
         <PageHero
           breadcrumbs={[{ label: 'Insights' }]}
-          eyebrow="INSIGHTS"
-          title="Perspectives on law,"
-          italic="regulation and business."
-          intro="A considered view of legal developments, regulatory questions and issues affecting businesses and regulated sectors."
+          eyebrow="JURISPRUDENTIAL PERSPECTIVES & REGULATORY COMMENTARY"
+          title="Authoritative dispatches from the"
+          italic="regulatory vanguard."
+          intro="Rigorous legal analysis, strategic commentary on landmark rulings, and dispatches on statutory shifts shaping India's energy, infrastructure, and corporate landscape."
           bgImage="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=2000&q=85"
         />
 
         <section className="section">
-          <div className="section-label">01 <span>Featured Analysis</span></div>
-          <div style={{ marginTop: '40px' }}>
-            <p className="eyebrow">Spotlight</p>
+          {/* SECTION 01: SPOTLIGHT BRIEFING */}
+          <div className="section-label">01 <span>Chambers Editorial</span></div>
+          <div style={{ marginTop: '30px', marginBottom: '36px' }}>
+            <p className="eyebrow">SPOTLIGHT ANALYSIS</p>
+            <h2 style={{ fontSize: 'clamp(36px, 4.5vw, 60px)', margin: 0 }}>
+              Lead Jurisprudential <i>Briefing.</i>
+            </h2>
           </div>
 
-          {/* Featured Article */}
+          {/* Featured Article Card */}
           <div className="featured-insight-card">
             <div className="featured-insight-media">
               <img src={featured.image} alt={featured.title} />
@@ -44,22 +49,22 @@ export default function InsightsPage() {
             <div className="featured-insight-content">
               <div className="featured-insight-meta">
                 <span className="eyebrow" style={{ margin: 0 }}>{featured.category}</span>
-                <span style={{ color: 'var(--muted)', fontSize: '11px' }}>{featured.readTime}</span>
+                <span style={{ color: 'var(--muted)', fontSize: '11px', letterSpacing: '0.08em' }}>{featured.readTime}</span>
               </div>
               <h2>{featured.title}</h2>
               <p>{featured.excerpt}</p>
               <div>
                 <Link href={`/insights/${featured.slug}`} className="button button-gold">
-                  <span>Read Insight</span>
+                  <span>Read Full Brief</span>
                   <ArrowUpRight size={15} />
                 </Link>
               </div>
             </div>
           </div>
 
-          {/* Category Filter Bar */}
-          <div className="section-label" style={{ marginTop: '80px', marginBottom: '30px' }}>
-            02 <span>Publications &amp; Articles</span>
+          {/* SECTION 02: FILTERABLE PUBLICATIONS */}
+          <div className="section-label" style={{ marginTop: '90px', marginBottom: '30px' }}>
+            02 <span>Publications &amp; Legal Commentaries</span>
           </div>
 
           <div className="filter-bar">
@@ -92,7 +97,7 @@ export default function InsightsPage() {
                   <div className="insight-card-footer">
                     <span>{item.date}</span>
                     <Link href={`/insights/${item.slug}`} className="text-link">
-                      <span>Read Article</span>
+                      <span>Read Brief</span>
                       <ArrowUpRight size={13} />
                     </Link>
                   </div>
@@ -102,9 +107,11 @@ export default function InsightsPage() {
           </div>
         </section>
 
+        {/* EXECUTIVE CTA */}
         <CTA
-          heading="Have questions regarding recent legal or regulatory developments?"
-          buttonText="Start a Conversation"
+          eyebrow="CONFIDENTIAL DELIBERATION"
+          heading="Need strategic clarity on recent regulatory or statutory changes?"
+          buttonText="Initiate Deliberation"
           href="/contact"
         />
       </main>
