@@ -2,9 +2,9 @@
 
 import Link from 'next/link'
 import Image from 'next/image'
-import { useState } from 'react'
-import { ArrowUpRight, ChevronDown, Menu, X, ArrowRight, Mail, Phone, Globe } from 'lucide-react'
-import { practices, phone, email, website, address } from '@/lib/practices'
+import { useEffect, useState } from 'react'
+import { ArrowUpRight, ChevronDown, Menu, X, ArrowRight, Mail, Phone, Clock, MapPin } from 'lucide-react'
+import { services, phone, email, address, hours, mapsUrl } from '@/lib/practices'
 
 export function Breadcrumbs({ items }: { items: { label: string; href?: string }[] }) {
   return (
@@ -26,76 +26,91 @@ export function Breadcrumbs({ items }: { items: { label: string; href?: string }
 
 export function Header() {
   const [open, setOpen] = useState(false)
-  const [practiceOpen, setPracticeOpen] = useState(false)
+  const [servicesOpen, setServicesOpen] = useState(false)
+  // Hover-to-open only on devices that actually hover; on touch the button toggles.
+  const [canHover, setCanHover] = useState(false)
+  const closeAll = () => { setOpen(false); setServicesOpen(false) }
+
+  useEffect(() => {
+    const mq = window.matchMedia('(hover: hover) and (pointer: fine)')
+    const update = () => setCanHover(mq.matches)
+    update()
+    mq.addEventListener('change', update)
+    return () => mq.removeEventListener('change', update)
+  }, [])
+
+  // Lock page scroll while the mobile menu is open; the menu scrolls on its own.
+  useEffect(() => {
+    document.body.classList.toggle('nav-open', open)
+    return () => document.body.classList.remove('nav-open')
+  }, [open])
 
   return (
     <header className="site-header">
-      <Link href="/" className="header-logo-link" onClick={() => { setOpen(false); setPracticeOpen(false); }}>
+      <Link href="/" className="header-logo-link" onClick={closeAll}>
         <Image
           src="/logo.png"
           alt="Sharp Legal & Co. Advocates Solicitors Consultants"
           width={240}
-          height={58}
+          height={50}
           className="header-logo"
           priority
         />
       </Link>
 
       <nav className={open ? 'nav-links is-open' : 'nav-links'} aria-label="Main navigation">
-        <Link href="/about" onClick={() => setOpen(false)}>The Firm</Link>
+        <Link href="/" onClick={closeAll}>Home</Link>
+        <Link href="/about" onClick={closeAll}>About Us</Link>
 
         <div
           className="nav-dropdown"
-          onMouseEnter={() => setPracticeOpen(true)}
-          onMouseLeave={() => setPracticeOpen(false)}
+          onMouseEnter={canHover ? () => setServicesOpen(true) : undefined}
+          onMouseLeave={canHover ? () => setServicesOpen(false) : undefined}
         >
           <button
             type="button"
             className="dropdown-trigger"
-            onClick={() => setPracticeOpen(!practiceOpen)}
-            aria-expanded={practiceOpen}
+            onClick={() => setServicesOpen(!servicesOpen)}
+            aria-expanded={servicesOpen}
           >
-            <span>Practices &amp; Sectors</span>
-            <ChevronDown size={14} className={practiceOpen ? 'rotate-180 transition-transform' : 'transition-transform'} />
+            <span>Services</span>
+            <ChevronDown size={14} className={servicesOpen ? 'rotate-180 transition-transform' : 'transition-transform'} />
           </button>
 
-          <div className={`dropdown-menu ${practiceOpen ? 'is-visible' : ''}`}>
+          <div className={`dropdown-menu ${servicesOpen ? 'is-visible' : ''}`}>
             <div className="dropdown-header">
-              <span className="eyebrow-small">AREAS OF SPECIALIZATION · TECHNO-LEGAL COUNSEL</span>
+              <span className="eyebrow-small">WHAT WE HELP WITH</span>
             </div>
             <div className="dropdown-items">
-              {practices.map((p) => (
+              {services.map((s) => (
                 <Link
-                  key={p.slug}
-                  href={`/practice-areas/${p.slug}`}
+                  key={s.slug}
+                  href={`/services/${s.slug}`}
                   className="dropdown-item"
-                  onClick={() => { setOpen(false); setPracticeOpen(false); }}
+                  onClick={closeAll}
                 >
-                  <span className="dropdown-num">{p.number}</span>
+                  <span className="dropdown-num">{s.number}</span>
                   <div className="dropdown-text">
-                    <span className="dropdown-title">{p.title}</span>
-                    <span className="dropdown-desc">{p.short}</span>
+                    <span className="dropdown-title">{s.title}</span>
+                    <span className="dropdown-desc">{s.short}</span>
                   </div>
                   <ArrowUpRight className="dropdown-arrow" size={14} />
                 </Link>
               ))}
             </div>
             <div className="dropdown-footer">
-              <Link
-                href="/practice-areas"
-                className="dropdown-all-link"
-                onClick={() => { setOpen(false); setPracticeOpen(false); }}
-              >
-                <span>Explore all 7 practice areas</span>
+              <Link href="/services" className="dropdown-all-link" onClick={closeAll}>
+                <span>See all {services.length} services</span>
                 <ArrowRight size={13} />
               </Link>
             </div>
           </div>
         </div>
 
-        <Link href="/insights" onClick={() => setOpen(false)}>Insights</Link>
-        <Link className="nav-contact" href="/contact" onClick={() => setOpen(false)}>
-          <span>Initiate Deliberation</span>
+        <Link href="/clients" onClick={closeAll}>Clients</Link>
+        <Link href="/careers" onClick={closeAll}>Careers</Link>
+        <Link className="nav-contact" href="/contact" onClick={closeAll}>
+          <span>Contact Us</span>
           <ArrowUpRight size={15} />
         </Link>
       </nav>
@@ -122,63 +137,64 @@ export function Footer() {
               src="/logo.png"
               alt="Sharp Legal & Co. Advocates Solicitors Consultants"
               width={240}
-              height={58}
+              height={50}
               className="footer-logo"
             />
           </Link>
           <p className="footer-bio">
-            Sharp Legal &amp; Co. is an elite techno-legal law firm advising corporations, energy developers, and institutional enterprises across India. Combining deep sector fluency with courtroom mastery, we provide senior-led counsel across energy regulation, complex commercial litigation, domestic and international arbitration, and strategic corporate transactions.
+            Sharp Legal &amp; Co. is a law firm in Gurugram that helps people and businesses fight cases against electricity companies. We also handle corporate, real estate, employment, insurance, and dispute work across India.
           </p>
           <div className="footer-trust-tag">
-            <span>Gurugram (Delhi NCR) · Pan-India Judicial &amp; Regulatory Practice</span>
+            <span>Gurugram, Delhi NCR · Practising across India</span>
           </div>
         </div>
 
         <div className="footer-column">
-          <p className="footer-col-title">The Firm</p>
+          <p className="footer-col-title">Quick Links</p>
           <ul className="footer-links">
-            <li><Link href="/about">Chambers Profile</Link></li>
-            <li><Link href="/practice-areas">Practice Disciplines</Link></li>
-            <li><Link href="/insights">Jurisprudential Insights</Link></li>
-            <li><Link href="/contact">Initiate Deliberation</Link></li>
+            <li><Link href="/">Home</Link></li>
+            <li><Link href="/about">About Us</Link></li>
+            <li><Link href="/services">Services</Link></li>
+            <li><Link href="/clients">Clients</Link></li>
+            <li><Link href="/careers">Careers</Link></li>
+            <li><Link href="/contact">Contact Us</Link></li>
           </ul>
         </div>
 
         <div className="footer-column">
-          <p className="footer-col-title">Practice Disciplines</p>
+          <p className="footer-col-title">Services</p>
           <ul className="footer-links">
-            {practices.map((p) => (
-              <li key={p.slug}>
-                <Link href={`/practice-areas/${p.slug}`}>{p.title}</Link>
+            {services.map((s) => (
+              <li key={s.slug}>
+                <Link href={`/services/${s.slug}`}>{s.title}</Link>
               </li>
             ))}
           </ul>
         </div>
 
         <div className="footer-column contact-column">
-          <p className="footer-col-title">Chambers Secretariat</p>
+          <p className="footer-col-title">Get in Touch</p>
           <div className="footer-contact-info">
             <div className="footer-contact-item">
-              <span className="label">Direct Line</span>
+              <span className="label">Phone</span>
               <a href={`tel:${phone.replace(/\s+/g, '')}`} className="value">{phone}</a>
             </div>
             <div className="footer-contact-item">
-              <span className="label">Confidential Inquiries</span>
+              <span className="label">Email</span>
               <a href={`mailto:${email}`} className="value">{email}</a>
             </div>
             <div className="footer-contact-item">
-              <span className="label">Official Portal</span>
-              <a href="https://www.sharplegal.in" target="_blank" rel="noopener noreferrer" className="value">{website}</a>
+              <span className="label">Office Hours</span>
+              <span className="value">{hours}</span>
             </div>
             <div className="footer-contact-item">
-              <span className="label">Chambers Coordinates</span>
-              <span className="value">{address}</span>
+              <span className="label">Address</span>
+              <a href={mapsUrl} target="_blank" rel="noopener noreferrer" className="value">{address}</a>
             </div>
           </div>
         </div>
       </div>
 
-      {/* Official Address Ribbon */}
       <div className="footer-address-ribbon">
         <div className="footer-ribbon-line">
           <span className="ribbon-line" />
@@ -197,16 +213,15 @@ export function Footer() {
             <span>{phone}</span>
           </a>
           <span className="ribbon-sep">|</span>
-          <a href="https://www.sharplegal.in" target="_blank" rel="noopener noreferrer" className="ribbon-contact-item">
-            <Globe size={13} className="ribbon-icon" />
-            <span>{website}</span>
-          </a>
+          <span className="ribbon-contact-item">
+            <Clock size={13} className="ribbon-icon" />
+            <span>Mon to Sat, 9 AM to 8 PM</span>
+          </span>
         </div>
       </div>
 
-      {/* Bar Council of India Advisory Note */}
       <div className="footer-disclaimer-note">
-        <strong>Regulatory Notice:</strong> Under the rules of the Bar Council of India, Sharp Legal &amp; Co. does not solicit work or advertise legal services. The contents of this portal are intended solely for general institutional and informational purposes regarding our practice disciplines and techno-legal capabilities.
+        <strong>Note:</strong> As per Bar Council of India rules, we do not advertise or solicit work. This website only gives general information about our firm and the areas we work in. It is not legal advice.
       </div>
 
       <div className="footer-bottom">
@@ -214,7 +229,7 @@ export function Footer() {
         <div className="legal-links">
           <Link href="/privacy-policy">Privacy Policy</Link>
           <Link href="/terms">Terms of Use</Link>
-          <Link href="/disclaimer">Bar Council Disclaimer</Link>
+          <Link href="/disclaimer">Disclaimer</Link>
         </div>
       </div>
     </footer>
@@ -257,9 +272,9 @@ export function PageHero({
 }
 
 export function CTA({
-  eyebrow = "CONFIDENTIAL DELIBERATION",
-  heading = "When strategic decisions carry significant legal consequence.",
-  buttonText = "Initiate a Consultation",
+  eyebrow = "TALK TO US",
+  heading = "Have a legal question? Let's discuss it.",
+  buttonText = "Contact Us",
   href = "/contact"
 }: {
   eyebrow?: string
@@ -278,6 +293,42 @@ export function CTA({
         <ArrowUpRight size={16} />
       </Link>
     </section>
+  )
+}
+
+/** Compact address / phone / hours block reused on About, Contact and Careers. */
+export function OfficeDetails({ dark = false }: { dark?: boolean }) {
+  return (
+    <div className={dark ? 'office-details office-details-dark' : 'office-details'}>
+      <div className="office-detail-row">
+        <MapPin size={16} className="office-detail-icon" />
+        <div>
+          <span className="office-detail-label">Office</span>
+          <a href={mapsUrl} target="_blank" rel="noopener noreferrer">{address}</a>
+        </div>
+      </div>
+      <div className="office-detail-row">
+        <Phone size={16} className="office-detail-icon" />
+        <div>
+          <span className="office-detail-label">Phone</span>
+          <a href={`tel:${phone.replace(/\s+/g, '')}`}>{phone}</a>
+        </div>
+      </div>
+      <div className="office-detail-row">
+        <Mail size={16} className="office-detail-icon" />
+        <div>
+          <span className="office-detail-label">Email</span>
+          <a href={`mailto:${email}`}>{email}</a>
+        </div>
+      </div>
+      <div className="office-detail-row">
+        <Clock size={16} className="office-detail-icon" />
+        <div>
+          <span className="office-detail-label">Hours</span>
+          <span>{hours}</span>
+        </div>
+      </div>
+    </div>
   )
 }
 

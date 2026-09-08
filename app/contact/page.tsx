@@ -1,10 +1,9 @@
 'use client'
 
 import { useState } from 'react'
-import Link from 'next/link'
-import { ArrowUpRight, CheckCircle, ShieldCheck, MapPin } from 'lucide-react'
-import { SiteShell, PageHero } from '@/components/site-shell'
-import { practices, phone, email, website, address } from '@/lib/practices'
+import { ArrowUpRight, CheckCircle, MapPin } from 'lucide-react'
+import { SiteShell, PageHero, OfficeDetails } from '@/components/site-shell'
+import { services, email, mapsUrl } from '@/lib/practices'
 
 export default function ContactPage() {
   const [sent, setSent] = useState(false)
@@ -13,106 +12,71 @@ export default function ContactPage() {
     email: '',
     phone: '',
     organization: '',
-    practiceArea: 'Electricity & Energy Law',
-    subject: '',
-    message: ''
+    service: services[0].title,
+    message: '',
   })
 
+  // Opens the visitor's email client with the form pre-filled; no server needed.
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
+    const subject = encodeURIComponent(`Enquiry: ${formData.service} - ${formData.name}`)
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nCompany: ${formData.organization || '-'}\nService: ${formData.service}\n\n${formData.message}`
+    )
+    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`
     setSent(true)
   }
 
   return (
     <SiteShell>
       <main>
-        {/* PAGE HERO */}
         <PageHero
-          breadcrumbs={[{ label: 'Contact' }]}
-          eyebrow="CONFIDENTIAL CHAMBERS ENGAGEMENT"
-          title="Initiate a strategic deliberation with"
-          italic="our counsel."
-          intro="Whether facing imminent regulatory deadlines, preparing for high-stakes commercial arbitration, or structuring complex corporate transactions, our partners provide prompt, confidential counsel."
-          bgImage="https://images.unsplash.com/photo-1497366811353-6870744d04b2?auto=format&fit=crop&w=2000&q=85"
+          breadcrumbs={[{ label: 'Contact Us' }]}
+          eyebrow="CONTACT US"
+          title="Let's talk about"
+          italic="your matter."
+          intro="Call, email, or fill in the form. We usually reply within one working day."
+          bgImage="/images/contact-hero.jpg"
         />
 
         <section className="section">
           <div className="contact-grid-v2">
-            {/* Left Column: Direct Contact Info */}
             <div className="contact-info-panel">
-              <div className="section-label">01 <span>Direct Engagement</span></div>
+              <div className="section-label">01 <span>Reach Us</span></div>
               <h2 style={{ marginTop: '20px', fontSize: 'clamp(36px, 4vw, 56px)' }}>
-                Independent counsel. <i>Committed to your enterprise.</i>
+                Call, email, <i>or visit.</i>
               </h2>
               <p className="contact-intro-text">
-                Sharp Legal &amp; Co. represents corporations, energy developers, infrastructure conglomerates, and institutional investors before regulatory commissions, arbitral tribunals, High Courts, and the Supreme Court of India. Our chambers secretariat ensures every inquiry is directed immediately to the relevant practice partner.
+                Our office is in Sector 102, Gurugram. We are open Monday to Saturday, 9 AM to 8 PM. If you would like to meet in person, please call first so we can keep the time free for you.
               </p>
 
-              <div className="contact-direct-cards">
-                <div className="contact-direct-card">
-                  <span className="contact-direct-label">Chambers Telephone</span>
-                  <a href={`tel:${phone.replace(/\s+/g, '')}`} className="contact-direct-val">
-                    {phone}
-                  </a>
-                </div>
+              <OfficeDetails />
 
-                <div className="contact-direct-card">
-                  <span className="contact-direct-label">Confidential Inquiries</span>
-                  <a href={`mailto:${email}`} className="contact-direct-val">
-                    {email}
-                  </a>
-                </div>
-
-                <div className="contact-direct-card">
-                  <span className="contact-direct-label">Official Portal</span>
-                  <a href="https://www.sharplegal.in" target="_blank" rel="noopener noreferrer" className="contact-direct-val">
-                    {website}
-                  </a>
-                </div>
-
-                <div className="contact-direct-card">
-                  <span className="contact-direct-label">Chambers Coordinates</span>
-                  <span className="contact-direct-val" style={{ fontSize: '15px', lineHeight: '1.5' }}>
-                    {address}
-                  </span>
-                </div>
-              </div>
-
-              {/* Proximity Stamp */}
-              <div style={{
-                marginTop: '32px',
-                padding: '18px 20px',
-                background: '#ffffff',
-                border: '1px solid var(--line)',
-                borderLeft: '3px solid var(--gold)',
-                display: 'flex',
-                alignItems: 'flex-start',
-                gap: '12px'
-              }}>
-                <ShieldCheck size={20} color="var(--gold)" style={{ flexShrink: 0, marginTop: '2px' }} />
-                <div style={{ fontSize: '12.5px', color: 'var(--muted)', lineHeight: '1.55' }}>
-                  <strong style={{ color: 'var(--navy)', display: 'block', marginBottom: '2px', textTransform: 'uppercase', letterSpacing: '0.06em', fontSize: '11px' }}>
-                    National Judicial Corridor Proximity
-                  </strong>
-                  Immediate access to Supreme Court of India, Delhi High Court, CERC, APTEL, and NCLAT from our Gurugram (Delhi NCR) chambers.
-                </div>
-              </div>
+              <a
+                href={mapsUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button button-outline"
+                style={{ marginTop: '24px' }}
+              >
+                <MapPin size={16} />
+                <span>Open in Google Maps</span>
+              </a>
             </div>
 
-            {/* Right Column: Premium Form */}
             <div className="contact-form-panel">
               <div className="contact-form-header">
-                <p className="eyebrow" style={{ margin: 0, marginBottom: '6px' }}>CONFIDENTIAL BRIEFING</p>
-                <h3>Initiate a Consultation</h3>
-                <p>Please provide the preliminary parameters of your inquiry for partner review.</p>
+                <p className="eyebrow" style={{ margin: 0, marginBottom: '6px' }}>SEND A MESSAGE</p>
+                <h3>Tell us about your matter</h3>
+                <p>Fill in the form and it will open an email to us with your details.</p>
               </div>
 
               {sent ? (
                 <div className="form-success-box">
                   <CheckCircle size={44} color="var(--gold)" style={{ margin: '0 auto 16px' }} />
-                  <span>Brief Received &amp; Logged.</span>
+                  <span>Your email is ready to send.</span>
                   <p>
-                    Thank you for contacting Sharp Legal &amp; Co. Our designated practice lead will review the parameters of your inquiry and connect with you under strict confidentiality.
+                    Your email app should have opened with the message filled in. Press send and we will get back to you within one working day. If nothing opened, write to us directly at {email}.
                   </p>
                   <button
                     type="button"
@@ -120,14 +84,14 @@ export default function ContactPage() {
                     style={{ marginTop: '24px' }}
                     onClick={() => setSent(false)}
                   >
-                    Submit Another Inquiry
+                    Send Another Message
                   </button>
                 </div>
               ) : (
                 <form onSubmit={handleSubmit}>
                   <div className="form-row">
                     <div className="form-group">
-                      <label htmlFor="name">Full Name *</label>
+                      <label htmlFor="name">Your Name *</label>
                       <input
                         id="name"
                         required
@@ -138,12 +102,12 @@ export default function ContactPage() {
                       />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="email">Corporate Email *</label>
+                      <label htmlFor="email">Email *</label>
                       <input
                         id="email"
                         required
                         type="email"
-                        placeholder="e.g. r.sharma@enterprise.com"
+                        placeholder="e.g. rahul@company.com"
                         value={formData.email}
                         onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                       />
@@ -152,7 +116,7 @@ export default function ContactPage() {
 
                   <div className="form-row">
                     <div className="form-group">
-                      <label htmlFor="phone">Contact Number *</label>
+                      <label htmlFor="phone">Phone *</label>
                       <input
                         id="phone"
                         required
@@ -163,11 +127,11 @@ export default function ContactPage() {
                       />
                     </div>
                     <div className="form-group">
-                      <label htmlFor="organization">Entity / Enterprise Name</label>
+                      <label htmlFor="organization">Company (optional)</label>
                       <input
                         id="organization"
                         type="text"
-                        placeholder="e.g. Bharat Energy Infrastructure Ltd."
+                        placeholder="e.g. ABC Industries Pvt. Ltd."
                         value={formData.organization}
                         onChange={(e) => setFormData({ ...formData, organization: e.target.value })}
                       />
@@ -175,82 +139,42 @@ export default function ContactPage() {
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="practiceArea">Relevant Practice Discipline</label>
+                    <label htmlFor="service">What is it about?</label>
                     <select
-                      id="practiceArea"
-                      value={formData.practiceArea}
-                      onChange={(e) => setFormData({ ...formData, practiceArea: e.target.value })}
+                      id="service"
+                      value={formData.service}
+                      onChange={(e) => setFormData({ ...formData, service: e.target.value })}
                     >
-                      {practices.map((p) => (
-                        <option key={p.slug} value={p.title}>
-                          {p.number} — {p.title}
-                        </option>
+                      {services.map((s) => (
+                        <option key={s.slug} value={s.title}>{s.title}</option>
                       ))}
+                      <option value="Something else">Something else</option>
                     </select>
                   </div>
 
                   <div className="form-group">
-                    <label htmlFor="subject">Subject / Judicial Forum *</label>
-                    <input
-                      id="subject"
-                      required
-                      type="text"
-                      placeholder="e.g. CERC Tariff True-Up Petition representation"
-                      value={formData.subject}
-                      onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                    />
-                  </div>
-
-                  <div className="form-group">
-                    <label htmlFor="message">Matter Parameters &amp; Timelines *</label>
+                    <label htmlFor="message">Your message *</label>
                     <textarea
                       id="message"
                       required
                       rows={5}
-                      placeholder="Please outline the nature of the brief, key dispute or advisory questions, and critical procedural deadlines..."
+                      placeholder="Tell us briefly what happened and what you need help with. If there is a deadline, please mention it."
                       value={formData.message}
                       onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                     />
                   </div>
 
                   <div className="form-disclaimer">
-                    <strong>Regulatory Note:</strong> Under the rules of the Bar Council of India, this preliminary communication does not create an attorney-client relationship. Formal advocate-client privilege attaches upon the execution of a professional engagement mandate.
+                    <strong>Please note:</strong> Sending this message does not make us your lawyers yet. That happens only after we agree to take up your matter. Please do not share confidential details until then.
                   </div>
 
                   <button className="button button-gold" style={{ width: '100%', justifyContent: 'center' }} type="submit">
-                    <span>Submit Confidential Brief</span>
+                    <span>Send Message</span>
                     <ArrowUpRight size={16} />
                   </button>
                 </form>
               )}
             </div>
-          </div>
-        </section>
-
-        {/* SECTION 02: PRACTICE DIRECTORY */}
-        <section className="section" style={{ borderTop: '1px solid var(--line)', background: '#ffffff' }}>
-          <div className="section-label">02 <span>Chambers Directory</span></div>
-          <div style={{ marginTop: '30px' }}>
-            <p className="eyebrow">CHAMBERS VERTICALS</p>
-            <h2 style={{ fontSize: 'clamp(36px, 4.5vw, 56px)', margin: '0 0 36px' }}>
-              Direct access to our <i>legal capabilities.</i>
-            </h2>
-          </div>
-
-          <div className="capabilities-grid">
-            {practices.map((p) => (
-              <Link href={`/practice-areas/${p.slug}`} className="capability-card" key={p.slug}>
-                <div>
-                  <div className="capability-top">
-                    <span className="capability-number">{p.number}</span>
-                    <ArrowUpRight size={18} color="var(--gold)" />
-                  </div>
-                  <h3>{p.title}</h3>
-                  <p>{p.short}</p>
-                </div>
-                <span className="text-link">Explore Practice Area <ArrowUpRight size={14} /></span>
-              </Link>
-            ))}
           </div>
         </section>
       </main>
