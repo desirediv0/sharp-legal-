@@ -62,7 +62,7 @@ export default function Home() {
               <p className="eyebrow hero-anim hero-anim-1">ADVOCATES · SOLICITORS · CONSULTANTS · EST. 2021</p>
               <h1 className="hero-anim hero-anim-2">
                 A renowned law firm<br />
-                <i>in the energy sector, Pan‑India.</i>
+                <i>in the energy sector.</i>
               </h1>
               <p className="hero-copy hero-anim hero-anim-3">
                 Sharp Legal &amp; Co. is a specialist practice in energy, electricity, infrastructure, and regulatory law, and has advised businesses, housing societies, and families across India since 2021. Clear thinking, thorough preparation, and effective advocacy on every matter we take.
