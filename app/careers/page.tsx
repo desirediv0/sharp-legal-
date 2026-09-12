@@ -26,7 +26,7 @@ function applyLink(title: string) {
 const perks = [
   'Real work on live matters from the first week',
   'Direct mentoring by the founder',
-  'Hearings at consumer forums, the Electricity Ombudsman, and the Delhi High Court',
+  'Hearings before Electricity Regulatory Commissions, APTEL, and the Delhi High Court',
   'A small team where your work is noticed',
 ]
 

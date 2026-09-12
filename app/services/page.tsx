@@ -25,7 +25,7 @@ export default function ServicesPage() {
           eyebrow="SERVICES WE OFFER"
           title="What we can"
           italic="help you with."
-          intro="Ten areas of law, explained in plain language. Electricity matters are our main focus; the rest support the businesses we work with."
+          intro="Ten areas of law, explained in plain language. Energy, electricity and regulatory law is our core practice; the rest support the businesses and individuals we work with."
           bgImage="/images/services-hero.jpg"
         />
 

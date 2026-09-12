@@ -6,9 +6,9 @@ import './globals.css'
 export const metadata: Metadata = {
   metadataBase: new URL('https://sharplegal.in'),
   title: { default: 'Sharp Legal & Co. | Advocates · Solicitors · Consultants', template: '%s | Sharp Legal & Co.' },
-  description: 'Sharp Legal & Co. is a Gurugram law firm that helps people and businesses fight cases against electricity companies, and handles corporate, real estate, employment, insurance, and dispute work across India.',
+  description: 'Sharp Legal & Co. is a Gurugram law firm specialising in energy, electricity, infrastructure and regulatory law, appearing before Regulatory Commissions, APTEL and High Courts. We also handle corporate, real estate, employment, insurance and dispute work across India.',
   alternates: { canonical: '/' },
-  openGraph: { title: 'Sharp Legal & Co. | Clarity when it matters', description: 'Lawyers who take on electricity companies for homeowners, societies, shops, and factories across India.', type: 'website', siteName: 'Sharp Legal & Co.' },
+  openGraph: { title: 'Sharp Legal & Co. | Clarity when it matters', description: 'Specialist lawyers for energy, electricity and regulatory disputes, advising businesses and individuals across India.', type: 'website', siteName: 'Sharp Legal & Co.' },
   generator: 'v0.app',
 }
 

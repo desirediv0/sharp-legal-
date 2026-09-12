@@ -27,27 +27,25 @@ export const services: Service[] = [
     aliases: ['energy-electricity-law', 'electricity-energy-law', 'regulatory-litigation'],
     number: '01',
     title: 'Electricity Matters',
-    short: 'Fighting wrong bills, disconnections, theft notices, and other disputes with your electricity company.',
+    short: 'Regulatory, commercial, and supply disputes in the electricity sector, before Commissions, APTEL, and High Courts.',
     description:
-      'Electricity is our main focus. We help people and businesses take on their electricity company (DISCOM) when something goes wrong: a wrong or inflated bill, a disconnection, a theft or unauthorised-use notice, a faulty meter, or a connection that is refused or delayed. We appear before consumer forums, the Electricity Ombudsman, State Electricity Regulatory Commissions, High Courts, and the Supreme Court.',
+      'Energy, electricity, and regulatory law is our core practice. We advise and represent generators, renewable energy developers, industries, housing societies, and consumers in disputes with distribution companies and regulators: tariff and open access matters, power purchase agreements, billing and supply disputes, theft and unauthorised-use notices, and connection issues. We appear before State Electricity Regulatory Commissions, the Appellate Tribunal for Electricity (APTEL), the Electricity Ombudsman, consumer forums, and High Courts.',
     image: '/images/svc-electricity.jpg',
     whatWeDo: [
+      'Tariff, open access, and regulatory petitions before State Electricity Commissions and APTEL',
+      'Power Purchase Agreements, renewable energy, and captive or distributed generation matters',
       'Wrong or inflated bills: challenging arrears, average billing, and wrong tariff categories',
       'Disconnection: getting supply restored quickly and stopping illegal disconnections',
       'Theft and unauthorised-use notices under Sections 126 and 135 of the Electricity Act',
-      'Meter disputes: fast or faulty meters, meter testing, and replacement',
-      'New connections and load increase: refusals, delays, and unfair demands',
-      'Compensation claims for electrocution, fires, and damage caused by the DISCOM',
-      'Tariff, source approval, and regulatory petitions before State Electricity Commissions and APTEL',
-      'Power Purchase Agreements, fuel supply agreements, and other energy contracts',
+      'Meter disputes, new connections, and load enhancement',
+      'Compensation claims for electrocution, fires, and damage caused by the distribution company',
     ],
     whoWeHelp: [
-      'Homeowners and tenants',
-      'Housing societies and RWAs',
-      'Shops, offices, and commercial buildings',
-      'Factories and industrial units',
+      'Power generators and renewable energy developers',
+      'Industries and open access consumers',
       'Builders and developers with bulk connections',
-      'Power generators and electricity utilities',
+      'Housing societies and RWAs',
+      'Homeowners, shops, and commercial buildings',
     ],
     faqs: [
       {
@@ -463,19 +461,34 @@ export const founder = {
   qualifications: 'B.Tech, LL.B.',
   enrolment: 'Advocate, High Court',
   /** Drop a photo at public/images/akshay-gupta.jpg and set this to true. */
-  hasPhoto: false,
+  hasPhoto: true,
   photo: '/images/akshay-gupta.jpg',
   bio: [
-    'Akshay Gupta founded Sharp Legal & Co. in 2021 with one goal: give businesses legal advice they can actually understand and act on.',
-    'He advises clients on corporate, property, employment, insurance, and dispute matters, and has built a particular reputation for electricity cases, taking on distribution companies before consumer forums, the Electricity Ombudsman, State Electricity Regulatory Commissions, and High Courts.',
+    'Akshay Gupta founded Sharp Legal & Co. in 2021. He is drawn to matters where the law is not just about reading a provision, but about understanding the larger system in which that provision operates.',
+    'His practice centres on regulatory, electricity, infrastructure, and commercial disputes: areas where legal questions meet technology, economics, policy, and the realities of running a business. He has appeared before Electricity Regulatory Commissions, the Appellate Tribunal for Electricity (APTEL), High Courts, and other judicial and quasi-judicial forums.',
     'Akshay personally leads every major matter at the firm. Clients speak to him directly, not to a junior who then relays the message.',
   ],
   highlights: [
     'B.Tech, LL.B.',
     'Advocate, High Court',
-    'Known for cases against electricity companies',
-    'Appears before courts, tribunals, and regulators across India',
+    'Electricity, infrastructure, and regulatory disputes',
+    'Appears before Regulatory Commissions, APTEL, and High Courts',
     'Based in Gurugram, Delhi NCR',
+  ],
+  /** First-person statement, shown on the About page. Adapted from the founder's own text. */
+  statement: [
+    'I have always been drawn to matters where the law is not simply about interpreting a provision, but about understanding the larger system in which that provision operates. My work has gradually led me towards regulatory, electricity, infrastructure, and commercial disputes: areas where legal questions meet technology, economics, policy, and the realities of doing business.',
+    'What attracted me to this field was its complexity. In regulatory litigation, understanding the statute is only the beginning. You must also understand the regulations, the industry, the technical issues, the commercial arrangement and, most importantly, the consequences of the decision being sought. That way of thinking shapes how I approach every matter.',
+    'Over the years I have found that I enjoy solving difficult problems more than simply arguing cases. A complex dispute usually turns on one or two issues. Finding them takes patience, preparation, and a willingness to go deep into the record. So my approach is simple: understand the problem completely, identify what truly matters, and build the legal strategy around it.',
+    'I believe effective advocacy begins well before the hearing. A good brief is not a pile of judgments and legal propositions. It should tell the decision-maker, clearly and logically, what the real dispute is, what the law provides, what the record establishes, and why our position should be accepted. Clarity is one of the most powerful tools in litigation.',
+    'My aim is not to build the biggest practice. It is to build one that clients associate with trust, technical understanding, rigorous preparation, and strategic advocacy. As the energy and infrastructure landscape evolves, with renewable energy, open access, distributed generation, and changing regulatory frameworks, the need for lawyers who understand both the law and the sector will only grow. I want to be part of that.',
+  ],
+  /** The four questions a good brief must answer, from the founder's statement. */
+  beliefs: [
+    'What is the real dispute?',
+    'What does the law provide?',
+    'What does the record establish?',
+    'Why should the court or regulator accept our position?',
   ],
 }
 
@@ -531,7 +544,7 @@ export const jobOpenings: JobOpening[] = [
     responsibilities: [
       'Legal research on electricity law, contracts, and court precedents',
       'Help draft petitions, notices, replies, and agreements',
-      'Attend hearings at consumer forums, the Electricity Ombudsman, and the Delhi High Court',
+      'Attend hearings before Electricity Regulatory Commissions, APTEL, and the Delhi High Court',
       'Maintain case files and track filing deadlines',
     ],
     requirements: [

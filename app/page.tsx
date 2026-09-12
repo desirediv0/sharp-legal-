@@ -5,14 +5,14 @@ import { SiteShell, CTA } from '@/components/site-shell'
 import { services, clients, founder } from '@/lib/practices'
 
 export const metadata: Metadata = {
-  title: 'Sharp Legal & Co. | Lawyers for Cases Against Electricity Companies, Gurugram',
+  title: 'Sharp Legal & Co. | Energy, Electricity & Regulatory Law Firm, Gurugram',
   description:
-    'Sharp Legal & Co. is a Gurugram law firm that helps people and businesses fight electricity companies over wrong bills, disconnections, theft notices, and meter disputes. We also handle corporate, real estate, employment, insurance, arbitration, and dispute work across India.',
+    'Sharp Legal & Co. is a Gurugram law firm specialising in energy, electricity, infrastructure, and regulatory law, appearing before Regulatory Commissions, APTEL, and High Courts. We also handle corporate, real estate, employment, insurance, arbitration, and dispute work across India.',
   alternates: { canonical: '/' },
   openGraph: {
-    title: 'Sharp Legal & Co. | We Take On Electricity Companies',
+    title: 'Sharp Legal & Co. | Energy & Regulatory Law, Gurugram',
     description:
-      'Wrong bill? Disconnected? Theft notice? Clear, practical legal help against your DISCOM for homes, societies, shops, and factories across India.',
+      'Specialist lawyers for electricity, infrastructure, and regulatory disputes, and a broader practice for businesses and individuals across India.',
     type: 'website',
   },
 }
@@ -20,8 +20,8 @@ export const metadata: Metadata = {
 const reasons = [
   {
     icon: Zap,
-    title: 'Electricity cases are our specialty',
-    text: 'Most law firms see a case against a DISCOM once in a while. We handle them every week. We know the supply code, the billing rules, and how electricity companies work.',
+    title: 'Electricity and regulatory law is our specialty',
+    text: 'We understand the regulations, the industry, the technical issues, and the commercial arrangement behind each dispute, not just the statute.',
   },
   {
     icon: Users,
@@ -31,12 +31,12 @@ const reasons = [
   {
     icon: Scale,
     title: 'We appear at every level',
-    text: 'From the consumer forum and the Electricity Ombudsman to the State Commission, High Courts, and the Supreme Court of India.',
+    text: 'Electricity Regulatory Commissions, APTEL, the Electricity Ombudsman, consumer forums, tribunals, High Courts, and the Supreme Court of India.',
   },
   {
     icon: Clock,
-    title: 'Plain answers, on time',
-    text: 'We tell you what the law means for your business in simple words, and we respect your deadlines.',
+    title: 'Prepared long before the hearing',
+    text: 'A complex dispute usually turns on one or two issues. We find them early, build the case around them, and explain it to you in plain words.',
   },
 ]
 
@@ -65,7 +65,7 @@ export default function Home() {
                 <i>in Gurugram.</i>
               </h1>
               <p className="hero-copy hero-anim hero-anim-3">
-                Sharp Legal &amp; Co. has represented families, housing societies, and leading businesses across India since 2021. We are best known for standing up to electricity companies, and for giving clear, honest advice on every matter we take.
+                Sharp Legal &amp; Co. is a specialist practice in energy, electricity, infrastructure, and regulatory law, and has advised businesses, housing societies, and families across India since 2021. Clear thinking, thorough preparation, and effective advocacy on every matter we take.
               </p>
               <div className="hero-actions hero-anim hero-anim-4">
                 <Link className="button button-gold" href="/contact">
@@ -83,11 +83,11 @@ export default function Home() {
               <ul>
                 <li>
                   <Scale size={18} />
-                  <span>Advocates before High Courts, tribunals, and regulatory commissions</span>
+                  <span>Appear before Electricity Regulatory Commissions, APTEL, and High Courts</span>
                 </li>
                 <li>
                   <Zap size={18} />
-                  <span>Specialists in cases against electricity companies</span>
+                  <span>Specialists in electricity, infrastructure, and regulatory disputes</span>
                 </li>
                 <li>
                   <Users size={18} />
@@ -132,10 +132,10 @@ export default function Home() {
               </h2>
               <div className="intro-body">
                 <p>
-                  Electricity companies have their own rules, their own forums, and their own way of doing things. When a bill is wrong, a meter is blamed, supply is cut off, or a theft notice arrives, most people do not know where to start or who to complain to.
+                  Electricity law has its own regulators, tribunals, and technical vocabulary. Whether the dispute is about a tariff order, an open access application, a power purchase agreement, or a bill that makes no sense, the statute is only the starting point.
                 </p>
                 <p>
-                  We do. We have taken on distribution companies since 2021, for homes, housing societies, shops, and factories. Billing disputes, disconnections, Section 126 and 135 notices, meter cases, and connection refusals are everyday work for us.
+                  We understand the regulations, the industry, and the commercial arrangements behind each matter. Since 2021 we have acted for generators, industries, housing societies, and consumers before Electricity Regulatory Commissions, APTEL, the Electricity Ombudsman, and High Courts.
                 </p>
                 <div className="intro-highlights">
                   {electricity.whatWeDo.slice(0, 4).map((item) => (
@@ -161,10 +161,10 @@ export default function Home() {
                 />
                 <div className="editorial-badge">
                   <Zap size={18} color="var(--gold)" />
-                  <span>Homes · Societies · Shops · Factories</span>
+                  <span>Generators · Industries · Societies · Consumers</span>
                 </div>
                 <div className="editorial-caption">
-                  <span>We act for the consumer, not the electricity company</span>
+                  <span>Regulatory, commercial, and supply disputes across the power sector</span>
                 </div>
               </div>
             </div>

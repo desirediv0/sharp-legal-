@@ -142,7 +142,7 @@ export function Footer() {
             />
           </Link>
           <p className="footer-bio">
-            Sharp Legal &amp; Co. is a law firm in Gurugram that helps people and businesses fight cases against electricity companies. We also handle corporate, real estate, employment, insurance, and dispute work across India.
+            Sharp Legal &amp; Co. is a Gurugram law firm specialising in energy, electricity, infrastructure, and regulatory law. We also advise on corporate, real estate, employment, insurance, and dispute matters across India.
           </p>
           <div className="footer-trust-tag">
             <span>Gurugram, Delhi NCR · Practising across India</span>

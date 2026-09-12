@@ -7,27 +7,27 @@ import { services, founder } from '@/lib/practices'
 export const metadata: Metadata = {
   title: 'About Us',
   description:
-    'Sharp Legal & Co. is a full-service law firm in Gurugram, founded in 2021 by Akshay Gupta. We handle corporate, real estate, employment, insurance, arbitration, and dispute work across India, with a particular strength in electricity matters.',
+    'Sharp Legal & Co. is a specialist legal practice in energy, electricity, infrastructure, and regulatory law, founded in Gurugram in 2021 by Akshay Gupta. We also advise on corporate, real estate, employment, insurance, and dispute matters across India.',
   alternates: { canonical: '/about' },
   openGraph: {
     title: 'About Sharp Legal & Co.',
-    description: 'A founder-led, full-service law firm in Gurugram with a particular strength in electricity disputes.',
+    description: 'A specialist practice in energy and regulatory law, built on clarity of thought, quality of preparation, and effective advocacy.',
     type: 'website',
   },
 }
 
 const values = [
   {
-    title: 'Clear advice',
-    text: 'We explain the law in simple words. You should always understand what we are recommending and why.',
+    title: 'Deep sector understanding',
+    text: 'We understand the regulations, the industry, the technical issues, and the commercial arrangement behind a dispute, not just the statute.',
   },
   {
-    title: 'Practical solutions',
-    text: 'Litigation is a tool, not a goal. We look for the outcome that is best for your business, whether that is a settlement or a fight.',
+    title: 'Rigorous preparation',
+    text: 'A complex dispute usually turns on one or two issues. We find them by going deep into the record, well before the hearing.',
   },
   {
-    title: 'Direct access',
-    text: 'You speak to the lawyer handling your matter. No layers, no runaround.',
+    title: 'Strategic advocacy',
+    text: 'A good brief tells the decision-maker what the real dispute is, what the law provides, what the record establishes, and why our position should be accepted.',
   },
 ]
 
@@ -47,9 +47,9 @@ export default function AboutPage() {
         <PageHero
           breadcrumbs={[{ label: 'About Us' }]}
           eyebrow="ABOUT SHARP LEGAL & CO."
-          title="A law firm for"
-          italic="people and businesses."
-          intro="Since 2021, Sharp Legal & Co. has helped families, housing societies, and companies across India with their legal problems: property, business, employment, insurance, and court disputes. Electricity cases are a particular strength."
+          title="A specialist practice in"
+          italic="energy and regulatory law."
+          intro="Sharp Legal & Co. advises and represents clients in complex regulatory and commercial disputes, before Regulatory Commissions, APTEL, High Courts, and other forums. Around that core, we help businesses and individuals with corporate, property, employment, insurance, and dispute matters."
           bgImage="/images/about-hero.jpg"
         />
 
@@ -59,23 +59,27 @@ export default function AboutPage() {
           <div className="editorial-split" style={{ marginTop: '50px' }}>
             <div className="editorial-text">
               <p className="eyebrow">SINCE 2021</p>
-              <h2>Practical lawyers for <i>real-world problems.</i></h2>
+              <h2>Deep sector understanding, <i>rigorous preparation.</i></h2>
               <div className="editorial-paragraphs">
                 <p>
-                  Sharp Legal &amp; Co. is a full-service law firm based in Gurugram, Delhi NCR. We work with homeowners, housing societies, start-ups, family businesses, real estate developers, manufacturers, and industry groups across India.
+                  Sharp Legal &amp; Co. is a specialist legal practice focused on energy, electricity, infrastructure, and regulatory law. We advise and represent clients in complex regulatory and commercial disputes, appearing before Regulatory Commissions, the Appellate Tribunal for Electricity, High Courts, and other judicial and quasi-judicial forums.
                 </p>
                 <p>
-                  Our work covers ten areas of law: corporate and commercial matters, dispute resolution, arbitration, real estate, employment and labour, civil service matters, NBFC and finance, industrial subsidies, insurance, and electricity. We appear before District Courts, consumer commissions, tribunals, regulatory commissions, High Courts, and the Supreme Court of India.
+                  Our approach combines deep sector understanding, rigorous legal research, and strategic litigation. We look beyond the immediate dispute to understand the regulatory, technical, and commercial issues that shape it.
                 </p>
                 <p>
-                  One area where we stand out is electricity. Few firms handle disputes with electricity companies week in, week out; we do, and clients come to us from across the country for it. But whatever your matter, you get the same approach: clear advice, a practical plan, and a lawyer who stays with the case until it is done.
+                  Alongside this core, we work with businesses, housing societies, and families across ten areas of law: corporate and commercial, dispute resolution, arbitration, real estate, employment, civil service matters, NBFC and finance, industrial subsidies, and insurance. Our vision is simple: a practice known for clarity of thought, quality of preparation, and effective advocacy, and the trusted partner clients turn to when the matter truly matters.
                 </p>
               </div>
 
               <div className="intro-highlights" style={{ marginTop: '28px' }}>
                 <div className="intro-highlight-item">
                   <CheckCircle2 size={16} className="highlight-icon" />
-                  <span>Ten areas of law under one roof</span>
+                  <span>Energy, electricity, infrastructure, and regulatory law</span>
+                </div>
+                <div className="intro-highlight-item">
+                  <CheckCircle2 size={16} className="highlight-icon" />
+                  <span>Appear before Regulatory Commissions, APTEL, and High Courts</span>
                 </div>
                 <div className="intro-highlight-item">
                   <CheckCircle2 size={16} className="highlight-icon" />
@@ -83,11 +87,7 @@ export default function AboutPage() {
                 </div>
                 <div className="intro-highlight-item">
                   <CheckCircle2 size={16} className="highlight-icon" />
-                  <span>Appear before courts, tribunals, and regulators across India</span>
-                </div>
-                <div className="intro-highlight-item">
-                  <CheckCircle2 size={16} className="highlight-icon" />
-                  <span>Recognised strength in electricity disputes</span>
+                  <span>Ten areas of law under one roof</span>
                 </div>
               </div>
             </div>
@@ -97,7 +97,7 @@ export default function AboutPage() {
                 <img src="/images/about-office.jpg" alt="Sharp Legal & Co. office" />
                 <div className="editorial-badge">
                   <Zap size={18} color="var(--gold)" />
-                  <span>FULL-SERVICE · GURUGRAM · SINCE 2021</span>
+                  <span>ENERGY · REGULATORY · GURUGRAM · SINCE 2021</span>
                 </div>
                 <div className="editorial-caption">
                   <span>Satya The Hive, Sector 102, Gurugram</span>
@@ -144,9 +144,34 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* 03: HOW WE WORK */}
+        {/* 03: IN HIS OWN WORDS */}
+        <section className="section founder-statement">
+          <div className="section-label">03 <span>In His Own Words</span></div>
+          <div className="statement-grid">
+            <div className="statement-aside">
+              <p className="eyebrow">FROM THE FOUNDER</p>
+              <h2>The lawyer behind <i>the practice.</i></h2>
+              <div className="statement-beliefs">
+                <span className="statement-beliefs-label">A good brief answers four questions</span>
+                <ol>
+                  {founder.beliefs.map((b) => (
+                    <li key={b}>{b}</li>
+                  ))}
+                </ol>
+              </div>
+            </div>
+            <div className="statement-body">
+              {founder.statement.map((p) => (
+                <p key={p}>{p}</p>
+              ))}
+              <p className="statement-sign">— {founder.name}</p>
+            </div>
+          </div>
+        </section>
+
+        {/* 04: HOW WE WORK */}
         <section className="section">
-          <div className="section-label">03 <span>How We Work</span></div>
+          <div className="section-label">04 <span>How We Work</span></div>
           <div style={{ marginTop: '40px' }}>
             <p className="eyebrow">WHAT YOU CAN EXPECT</p>
             <h2 style={{ fontSize: 'clamp(42px, 5vw, 68px)', margin: '0 0 16px' }}>
@@ -164,9 +189,9 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* 04: PROCESS */}
+        {/* 05: PROCESS */}
         <section className="section" style={{ paddingTop: 0 }}>
-          <div className="section-label">04 <span>Our Process</span></div>
+          <div className="section-label">05 <span>Our Process</span></div>
           <div style={{ marginTop: '40px' }}>
             <p className="eyebrow">FROM FIRST CALL TO FINAL ORDER</p>
             <h2 style={{ fontSize: 'clamp(42px, 5vw, 68px)', margin: '0 0 16px' }}>
@@ -185,9 +210,9 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* 05: SERVICES */}
+        {/* 06: SERVICES */}
         <section className="section" style={{ paddingTop: 0 }}>
-          <div className="section-label">05 <span>Services</span></div>
+          <div className="section-label">06 <span>Services</span></div>
           <div style={{ marginTop: '40px' }}>
             <p className="eyebrow">WHAT WE HELP WITH</p>
             <h2 style={{ fontSize: 'clamp(42px, 5vw, 68px)', margin: '0 0 16px' }}>
@@ -212,9 +237,9 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* 06: OFFICE */}
+        {/* 07: OFFICE */}
         <section className="section" style={{ paddingTop: 0 }}>
-          <div className="section-label">06 <span>Our Office</span></div>
+          <div className="section-label">07 <span>Our Office</span></div>
           <div className="chambers-reach-block">
             <div className="chambers-reach-info">
               <p className="eyebrow" style={{ margin: '0 0 12px' }}>GURUGRAM, DELHI NCR</p>
