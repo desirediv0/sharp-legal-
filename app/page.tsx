@@ -107,10 +107,6 @@ export default function Home() {
               <span>Years in practice</span>
             </div>
             <div className="hero-v2-stat">
-              <strong>{services.length}</strong>
-              <span>Areas of law</span>
-            </div>
-            <div className="hero-v2-stat">
               <strong>1000+</strong>
               <span>Business clients</span>
             </div>
