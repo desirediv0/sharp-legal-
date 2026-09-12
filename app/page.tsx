@@ -62,7 +62,7 @@ export default function Home() {
               <p className="eyebrow hero-anim hero-anim-1">ADVOCATES · SOLICITORS · CONSULTANTS · EST. 2021</p>
               <h1 className="hero-anim hero-anim-2">
                 A renowned law firm<br />
-                <i>in Gurugram.</i>
+                <i>in the energy sector, Pan‑India.</i>
               </h1>
               <p className="hero-copy hero-anim hero-anim-3">
                 Sharp Legal &amp; Co. is a specialist practice in energy, electricity, infrastructure, and regulatory law, and has advised businesses, housing societies, and families across India since 2021. Clear thinking, thorough preparation, and effective advocacy on every matter we take.
@@ -82,6 +82,10 @@ export default function Home() {
               <span className="hero-v2-card-label">WHY CLIENTS CHOOSE US</span>
               <ul>
                 <li>
+                  <Users size={18} />
+                  <span>Dedicated techno-legal team of qualified engineers and lawyers</span>
+                </li>
+                <li>
                   <Scale size={18} />
                   <span>Appear before Electricity Regulatory Commissions, APTEL, and High Courts</span>
                 </li>
@@ -90,12 +94,8 @@ export default function Home() {
                   <span>Specialists in electricity, infrastructure, and regulatory disputes</span>
                 </li>
                 <li>
-                  <Users size={18} />
-                  <span>Founder-led: you deal with Akshay Gupta directly</span>
-                </li>
-                <li>
                   <Building2 size={18} />
-                  <span>Trusted by real estate developers, manufacturers, and industry groups</span>
+                  <span>Trusted by consumers, power generators, energy distributors, and more</span>
                 </li>
               </ul>
             </aside>
@@ -111,7 +111,7 @@ export default function Home() {
               <span>Areas of law</span>
             </div>
             <div className="hero-v2-stat">
-              <strong>{clients.length}+</strong>
+              <strong>1000+</strong>
               <span>Business clients</span>
             </div>
             <div className="hero-v2-stat">
@@ -135,7 +135,7 @@ export default function Home() {
                   Electricity law has its own regulators, tribunals, and technical vocabulary. Whether the dispute is about a tariff order, an open access application, a power purchase agreement, or a bill that makes no sense, the statute is only the starting point.
                 </p>
                 <p>
-                  We understand the regulations, the industry, and the commercial arrangements behind each matter. Since 2021 we have acted for generators, industries, housing societies, and consumers before Electricity Regulatory Commissions, APTEL, the Electricity Ombudsman, and High Courts.
+                  We understand the regulations, the industry, and the commercial arrangements behind each matter. Since 2021 we have acted for generators, industries, housing societies, and consumers before Electricity Regulatory Commissions, APTEL, High Courts, and the Supreme Court.
                 </p>
                 <div className="intro-highlights">
                   {electricity.whatWeDo.slice(0, 4).map((item) => (
