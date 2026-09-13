@@ -7,6 +7,8 @@ import { services, email, mapsUrl } from '@/lib/practices'
 
 export default function ContactPage() {
   const [sent, setSent] = useState(false)
+  const [sending, setSending] = useState(false)
+  const [error, setError] = useState('')
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -16,15 +18,31 @@ export default function ContactPage() {
     message: '',
   })
 
-  // Opens the visitor's email client with the form pre-filled; no server needed.
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    const subject = encodeURIComponent(`Enquiry: ${formData.service} - ${formData.name}`)
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\nCompany: ${formData.organization || '-'}\nService: ${formData.service}\n\n${formData.message}`
-    )
-    window.location.href = `mailto:${email}?subject=${subject}&body=${body}`
-    setSent(true)
+    setSending(true)
+    setError('')
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(formData),
+      })
+      if (!res.ok) throw new Error('Failed to send')
+      setSent(true)
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        organization: '',
+        service: services[0].title,
+        message: '',
+      })
+    } catch {
+      setError(`Something went wrong. Please try again or email us directly at ${email}.`)
+    } finally {
+      setSending(false)
+    }
   }
 
   return (
@@ -68,15 +86,15 @@ export default function ContactPage() {
               <div className="contact-form-header">
                 <p className="eyebrow" style={{ margin: 0, marginBottom: '6px' }}>SEND A MESSAGE</p>
                 <h3>Tell us about your matter</h3>
-                <p>Fill in the form and it will open an email to us with your details.</p>
+                <p>Fill in the form and we will get back to you within one working day.</p>
               </div>
 
               {sent ? (
                 <div className="form-success-box">
                   <CheckCircle size={44} color="var(--gold)" style={{ margin: '0 auto 16px' }} />
-                  <span>Your email is ready to send.</span>
+                  <span>Your message has been sent.</span>
                   <p>
-                    Your email app should have opened with the message filled in. Press send and we will get back to you within one working day. If nothing opened, write to us directly at {email}.
+                    Thank you for reaching out. We will get back to you within one working day. If it is urgent, please write to us directly at {email}.
                   </p>
                   <button
                     type="button"
@@ -168,8 +186,17 @@ export default function ContactPage() {
                     <strong>Please note:</strong> Sending this message does not make us your lawyers yet. That happens only after we agree to take up your matter. Please do not share confidential details until then.
                   </div>
 
-                  <button className="button button-gold" style={{ width: '100%', justifyContent: 'center' }} type="submit">
-                    <span>Send Message</span>
+                  {error && (
+                    <p style={{ color: '#c0392b', marginBottom: '16px', fontSize: '14px' }}>{error}</p>
+                  )}
+
+                  <button
+                    className="button button-gold"
+                    style={{ width: '100%', justifyContent: 'center' }}
+                    type="submit"
+                    disabled={sending}
+                  >
+                    <span>{sending ? 'Sending...' : 'Send Message'}</span>
                     <ArrowUpRight size={16} />
                   </button>
                 </form>
